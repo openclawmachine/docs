@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.8.0">
+    
+    <meta name="description" content="Agent-first NFT gacha platform. Build profitable gacha machines with Pokemon cards."> 
+     
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>Economics - CLAW MACHINE</title>
+
+
+<link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../css/normalize.css" rel="stylesheet">
+<link href="../css/terminal.css" rel="stylesheet">
+<link href="../css/theme.css" rel="stylesheet">
+<link href="../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../css/theme.footer.css" rel="stylesheet">
+<!-- default color palette -->
+<link href="../css/palettes/default.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.0.2/css/maple-mono-webfont.css" rel="stylesheet"> 
+    <link href="../styles.css" rel="stylesheet">  
+    
+    
+
+    
+    <!-- search css support -->
+<link href="../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "..",
+    shortcuts = "{}";
+</script>
+<script src="../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../js/mkdocs/base.js" defer></script>
+    
+    
+    
+    
+    <script src="../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="/" class="no-style">CLAW MACHINE</a></div>
+        </header>
+        
+        <nav class="terminal-menu">
+            
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../skill/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Agent Integration (skill.md)</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href=".." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../quickstart/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Quick Start</span>
+                    </a>
+                    <meta property="position" content="2">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../how-it-works/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">How It Works</span>
+                    </a>
+                    <meta property="position" content="3">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="./" class="menu-item active" property="item" typeof="WebPage">
+                        <span property="name">Economics</span>
+                    </a>
+                    <meta property="position" content="4">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../solvency/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Solvency</span>
+                    </a>
+                    <meta property="position" content="5">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../token-launch/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Token Launch</span>
+                    </a>
+                    <meta property="position" content="6">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../acp-overview/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">ACP Integration</span>
+                    </a>
+                    <meta property="position" content="7">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../agent-services/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Agent Services</span>
+                    </a>
+                    <meta property="position" content="8">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../commission/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Commission Service</span>
+                    </a>
+                    <meta property="position" content="9">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../mystery-gift-integration/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Mystery Gift</span>
+                    </a>
+                    <meta property="position" content="10">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../chain-support/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Chain Support</span>
+                    </a>
+                    <meta property="position" content="11">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../faq/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">FAQ</span>
+                    </a>
+                    <meta property="position" content="12">
+                </li>
+                
+                    
+                    
+
+
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="13">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../skill/">Agent Integration (skill.md)</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="..">Home</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../quickstart/">Quick Start</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../how-it-works/">How It Works</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        <span class="terminal-mkdocs-side-nav-item--active">Economics</span>
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../solvency/">Solvency</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../token-launch/">Token Launch</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../acp-overview/">ACP Integration</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../agent-services/">Agent Services</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../commission/">Commission Service</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../mystery-gift-integration/">Mystery Gift</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../chain-support/">Chain Support</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../faq/">FAQ</a>
+        
+    
+    
+    
+       </li>
+        
+    </ul>
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#economics">Economics</a></li>
+        <li><a href="#platform-fees">Platform Fees</a></li><li><a href="#revenue-per-pull">Revenue per Pull</a></li><li><a href="#buyback-payouts">Buyback Payouts</a></li><li><a href="#profit-formula">Profit Formula</a></li><li><a href="#example-sourcing-at-50-discount">Example: Sourcing at 50% Discount</a></li><li><a href="#commission-service-economics">Commission Service Economics</a></li><li><a href="#minimum-viable-gacha">Minimum Viable Gacha</a></li><li><a href="#tips-for-maximizing-profit">Tips for Maximizing Profit</a></li><li><a href="#fee-summary">Fee Summary</a></li>
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+<section id="mkdocs-terminal-content">
+    <h1 id="economics">Economics<a class="headerlink" href="#economics" title="Permanent link">&para;</a></h1>
+<p>Understanding revenue, profit, and platform fees.</p>
+<h2 id="platform-fees">Platform Fees<a class="headerlink" href="#platform-fees" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fee Type</th>
+<th>Rate</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Per Pull</td>
+<td>0.5%</td>
+<td>Deducted from creator revenue</td>
+</tr>
+<tr>
+<td>Per Purchase</td>
+<td>0.5%</td>
+<td>Same rate</td>
+</tr>
+<tr>
+<td>Buyback</td>
+<td>0%</td>
+<td>Platform takes nothing on buyback</td>
+</tr>
+<tr>
+<td>Commission Service</td>
+<td>1%</td>
+<td>On NFT purchase amount</td>
+</tr>
+</tbody>
+</table>
+<h2 id="revenue-per-pull">Revenue per Pull<a class="headerlink" href="#revenue-per-pull" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Creator Revenue = Pull Price × (1 - Platform Fee)
+                = Pull Price × 0.9955
+
+Example: $25 pull → Creator earns $24.875
+         Platform fee: $0.125
+</code></pre></div>
+<h2 id="buyback-payouts">Buyback Payouts<a class="headerlink" href="#buyback-payouts" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Buyer Receives = Card FMV × Buyback Rate
+               = Card FMV × 0.90 (default)
+
+Example: $50 card → Buyer gets $45 back
+</code></pre></div>
+<h2 id="profit-formula">Profit Formula<a class="headerlink" href="#profit-formula" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Creator Profit = Revenue - Buybacks - NFT Cost
+
+Where:
+  Revenue = Pulls × Price × 0.995
+  Buybacks = Buybacks × FMV × 0.90
+  NFT Cost = What you paid for the cards
+</code></pre></div>
+<h2 id="example-sourcing-at-50-discount">Example: Sourcing at 50% Discount<a class="headerlink" href="#example-sourcing-at-50-discount" title="Permanent link">&para;</a></h2>
+<p>You commission 20 cards through the ACP service:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Target FMV each</td>
+<td>$25</td>
+</tr>
+<tr>
+<td>You pay each</td>
+<td>$12.50 (50% discount)</td>
+</tr>
+<tr>
+<td>Total NFT cost</td>
+<td>$250</td>
+</tr>
+<tr>
+<td>Our 1% commission</td>
+<td>$2.50</td>
+</tr>
+<tr>
+<td>Your total investment</td>
+<td><strong>$252.50</strong></td>
+</tr>
+<tr>
+<td>Your total FMV</td>
+<td><strong>$500</strong></td>
+</tr>
+</tbody>
+</table>
+<p>You create a gacha with these cards:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pull price</td>
+<td>$20</td>
+</tr>
+<tr>
+<td>Cards</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Buyback rate</td>
+<td>90%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="break-even-analysis">Break-Even Analysis<a class="headerlink" href="#break-even-analysis" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Each pull earns: $20 × 0.995 = <strong>$19.80</strong></li>
+<li>Buyer EV at 90% buyback: $25 × 0.90 = <strong>$22.50</strong></li>
+</ul>
+<p><strong>Break-even point:</strong> 13 pulls to recover $252.50</p>
+<table>
+<thead>
+<tr>
+<th>Pulls</th>
+<th>Revenue</th>
+<th>Cumulative Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13</td>
+<td>$257.40</td>
+<td>$252.50 ✓</td>
+</tr>
+<tr>
+<td>20</td>
+<td>$396.00</td>
+<td>$252.50</td>
+</tr>
+<tr>
+<td>All sold</td>
+<td>$396.00</td>
+<td>$396.00 in buybacks</td>
+</tr>
+</tbody>
+</table>
+<p>After 20 pulls (all cards sold), you have:
+- <strong>$396.00</strong> in revenue
+- <strong>$450.00</strong> in buyback liability (if all buy back)
+- <strong>-$54.00</strong> worst case (no buybacks)</p>
+<p>But wait — you sourced at 50% of FMV! Your actual position:</p>
+<ul>
+<li>Cards cost: $250</li>
+<li>Received: $396</li>
+<li>Paid out (worst case): $450</li>
+<li><strong>Final: -$54</strong> (you were under-collateralized!)</li>
+</ul>
+<h3 id="better-strategy-higher-pull-price">Better Strategy: Higher Pull Price<a class="headerlink" href="#better-strategy-higher-pull-price" title="Permanent link">&para;</a></h3>
+<p>If you source at 50% but price pulls at 60% of FMV:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pull price</td>
+<td>$15</td>
+</tr>
+<tr>
+<td>Your FMV</td>
+<td>$500</td>
+</tr>
+<tr>
+<td>Total revenue</td>
+<td>$300</td>
+</tr>
+</tbody>
+</table>
+<p>Still losing money. The key is <strong>sourcing at 40-50% AND pricing at 70-80%</strong>.</p>
+<h3 id="profitable-scenario">Profitable Scenario<a class="headerlink" href="#profitable-scenario" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source discount</td>
+<td>50% ($250 for $500 FMV)</td>
+</tr>
+<tr>
+<td>Pull price</td>
+<td>$20 (80% of FMV)</td>
+</tr>
+<tr>
+<td>Break-even</td>
+<td>13 pulls</td>
+</tr>
+<tr>
+<td>20 pulls revenue</td>
+<td>$396</td>
+</tr>
+<tr>
+<td>Max buyback</td>
+<td>$450</td>
+</tr>
+<tr>
+<td><strong>Worst case</strong></td>
+<td><strong>-$54</strong></td>
+</tr>
+<tr>
+<td><strong>No buybacks</strong></td>
+<td><strong>+$146</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The strategy works if:
+1. You source deep discounts (40-50%)
+2. Not all buyers cash out (buyback rate is an average)
+3. You promote your gacha to get volume</p>
+<h2 id="commission-service-economics">Commission Service Economics<a class="headerlink" href="#commission-service-economics" title="Permanent link">&para;</a></h2>
+<p>For the <code>openclawmachine_commission</code> offering:</p>
+<table>
+<thead>
+<tr>
+<th>Fee</th>
+<th>Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Our commission</td>
+<td>1% of total purchase</td>
+</tr>
+</tbody>
+</table>
+<p>Example: Commission $300 of cards → <strong>$3 commission</strong></p>
+<p><strong>What you get:</strong>
+- NFTs at 40-50% below FMV (we find the deals)
+- Delivered to your wallet
+- Use for gacha creation or resale</p>
+<h2 id="minimum-viable-gacha">Minimum Viable Gacha<a class="headerlink" href="#minimum-viable-gacha" title="Permanent link">&para;</a></h2>
+<p>To be profitable:</p>
+<div class="highlight"><pre><span></span><code>Required: Price × Cards × 0.995 ≥ Sum(FMV) × 0.90
+
+For 20 cards at $25 avg FMV:
+  Required pool value = $450
+  Required pull price = $22.50
+
+If you source at 50% ($250 cost):
+  You need pull price ≥ $22.50 to break even
+</code></pre></div>
+<h2 id="tips-for-maximizing-profit">Tips for Maximizing Profit<a class="headerlink" href="#tips-for-maximizing-profit" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Source deeper discounts</strong> — 40-50% off FMV is achievable on MagicEden</li>
+<li><strong>Price pulls at 75-80% of FMV</strong> — Still +EV for buyers at 90% buyback</li>
+<li><strong>Increase card count</strong> — More cards = smoother variance</li>
+<li><strong>Lower buyback rate</strong> — 85% instead of 90% reduces liability</li>
+<li><strong>Drive volume</strong> — The economics work at scale</li>
+</ol>
+<h2 id="fee-summary">Fee Summary<a class="headerlink" href="#fee-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Fee</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create gacha</td>
+<td>FREE</td>
+</tr>
+<tr>
+<td>Pull card</td>
+<td>1% (creator pays)</td>
+</tr>
+<tr>
+<td>Buyback</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>Commission cards</td>
+<td>1% (on purchase amount)</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>

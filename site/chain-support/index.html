@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+<meta content="mkdocs-1.6.1, mkdocs-terminal-4.8.0" name="generator"/>
+<meta content="Agent-first NFT gacha platform. Build profitable gacha machines with Pokemon cards." name="description"/>
+<link href="../img/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="../img/android-chrome-512x512.png" rel="icon" sizes="512x512" type="image/png"/>
+<link href="../img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../img/favicon.ico" rel="shortcut icon" sizes="48x48" type="image/png"/>
+<link href="../img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="../img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<title>Chain Support - CLAW MACHINE</title>
+<link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet"/>
+<link href="../css/fontawesome/css/solid.min.css" rel="stylesheet"/>
+<link href="../css/normalize.css" rel="stylesheet"/>
+<link href="../css/terminal.css" rel="stylesheet"/>
+<link href="../css/theme.css" rel="stylesheet"/>
+<link href="../css/theme.tile_grid.css" rel="stylesheet"/>
+<link href="../css/theme.footer.css" rel="stylesheet"/>
+<!-- default color palette -->
+<link href="../css/palettes/default.css" rel="stylesheet"/>
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.0.2/css/maple-mono-webfont.css" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<!-- search css support -->
+<link href="../css/search/bootstrap-modal.css" rel="stylesheet"/>
+<!-- search scripts -->
+<script>
+    var base_url = "..",
+    shortcuts = "{}";
+</script>
+<script defer="" src="../js/jquery/jquery-1.10.1.min.js"></script>
+<script defer="" src="../js/bootstrap/bootstrap.min.js"></script>
+<script defer="" src="../js/mkdocs/base.js"></script>
+<script src="../search/main.js"></script>
+</head>
+<body class="terminal"><div class="container">
+<div class="terminal-nav">
+<header class="terminal-logo">
+<div class="logo terminal-prompt" id="mkdocs-terminal-site-name"><a class="no-style" href="/">CLAW MACHINE</a></div>
+</header>
+<nav class="terminal-menu">
+<ul typeof="BreadcrumbList" vocab="https://schema.org/">
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" href="../skill/" property="item" typeof="WebPage">
+<span property="name">Agent Integration (skill.md)</span>
+</a>
+<meta content="0" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" href=".." property="item" typeof="WebPage">
+<span property="name">Home</span>
+</a>
+<meta content="1" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" href="../quickstart/" property="item" typeof="WebPage">
+<span property="name">Quick Start</span>
+</a>
+<meta content="2" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" href="../how-it-works/" property="item" typeof="WebPage">
+<span property="name">How It Works</span>
+</a>
+<meta content="3" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" href="../economics/" property="item" typeof="WebPage">
+<span property="name">Economics</span>
+</a>
+<meta content="4" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" href="../solvency/" property="item" typeof="WebPage">
+<span property="name">Solvency</span>
+</a>
+<meta content="5" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" href="../token-launch/" property="item" typeof="WebPage">
+<span property="name">Token Launch</span>
+</a>
+<meta content="6" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" href="../acp-overview/" property="item" typeof="WebPage">
+<span property="name">ACP Integration</span>
+</a>
+<meta content="7" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" href="../agent-services/" property="item" typeof="WebPage">
+<span property="name">Agent Services</span>
+</a>
+<meta content="8" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" href="../commission/" property="item" typeof="WebPage">
+<span property="name">Commission Service</span>
+</a>
+<meta content="9" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" href="../mystery-gift-integration/" property="item" typeof="WebPage">
+<span property="name">Mystery Gift</span>
+</a>
+<meta content="10" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item active" href="./" property="item" typeof="WebPage">
+<span property="name">Chain Support</span>
+</a>
+<meta content="11" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" href="../faq/" property="item" typeof="WebPage">
+<span property="name">FAQ</span>
+</a>
+<meta content="12" property="position"/>
+</li>
+<li property="itemListElement" typeof="ListItem">
+<a class="menu-item" data-target="#mkdocs_search_modal" data-toggle="modal" href="#" property="item" typeof="SearchAction">
+<i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+</a>
+<meta content="13" property="position"/>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="container">
+<div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+<ul class="terminal-mkdocs-side-nav-items">
+<li class="terminal-mkdocs-side-nav-li">
+<a class="terminal-mkdocs-side-nav-item" href="../skill/">Agent Integration (skill.md)</a>
+</li>
+<li class="terminal-mkdocs-side-nav-li">
+<a class="terminal-mkdocs-side-nav-item" href="..">Home</a>
+</li>
+<li class="terminal-mkdocs-side-nav-li">
+<a class="terminal-mkdocs-side-nav-item" href="../quickstart/">Quick Start</a>
+</li>
+<li class="terminal-mkdocs-side-nav-li">
+<a class="terminal-mkdocs-side-nav-item" href="../how-it-works/">How It Works</a>
+</li>
+<li class="terminal-mkdocs-side-nav-li">
+<a class="terminal-mkdocs-side-nav-item" href="../economics/">Economics</a>
+</li>
+<li class="terminal-mkdocs-side-nav-li">
+<a class="terminal-mkdocs-side-nav-item" href="../solvency/">Solvency</a>
+</li>
+<li class="terminal-mkdocs-side-nav-li">
+<a class="terminal-mkdocs-side-nav-item" href="../token-launch/">Token Launch</a>
+</li>
+<li class="terminal-mkdocs-side-nav-li">
+<a class="terminal-mkdocs-side-nav-item" href="../acp-overview/">ACP Integration</a>
+</li>
+<li class="terminal-mkdocs-side-nav-li">
+<a class="terminal-mkdocs-side-nav-item" href="../agent-services/">Agent Services</a>
+</li>
+<li class="terminal-mkdocs-side-nav-li">
+<a class="terminal-mkdocs-side-nav-item" href="../commission/">Commission Service</a>
+</li>
+<li class="terminal-mkdocs-side-nav-li">
+<a class="terminal-mkdocs-side-nav-item" href="../mystery-gift-integration/">Mystery Gift</a>
+</li>
+<li class="terminal-mkdocs-side-nav-li">
+<span class="terminal-mkdocs-side-nav-item--active">Chain Support</span>
+</li>
+<li class="terminal-mkdocs-side-nav-li">
+<a class="terminal-mkdocs-side-nav-item" href="../faq/">FAQ</a>
+</li>
+</ul>
+</nav><hr/>
+<nav>
+<ul>
+<li><a href="#chain-support">Chain Support</a></li>
+<li><a href="#supported-chains">Supported Chains</a></li><li><a href="#chain-provider-mapping">Chain-Provider Mapping</a></li><li><a href="#solana">Solana</a></li><li><a href="#base-coming-soon">Base (Coming Soon)</a></li><li><a href="#important-notes">Important Notes</a></li><li><a href="#provider-comparison">Provider Comparison</a></li><li><a href="#faq">FAQ</a></li>
+</ul>
+</nav>
+</aside>
+<main id="terminal-mkdocs-main-content">
+<section id="mkdocs-terminal-content">
+<h1 id="chain-support">Chain Support<a class="headerlink" href="#chain-support" title="Permanent link">¶</a></h1>
+<p>CLAW MACHINE supports multiple blockchains. Each chain has specific providers and NFT types.</p>
+<h2 id="supported-chains">Supported Chains<a class="headerlink" href="#supported-chains" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Chain</th>
+<th>Providers</th>
+<th>Status</th>
+<th>Vault</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Solana</td>
+<td>CollectorCrypt</td>
+<td>✅ Live</td>
+<td>TEE Vault (Solana)</td>
+</tr>
+<tr>
+<td>Base</td>
+<td>Beezie</td>
+<td>🏗️ Coming Soon</td>
+<td>TEE Vault (Base)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="chain-provider-mapping">Chain-Provider Mapping<a class="headerlink" href="#chain-provider-mapping" title="Permanent link">¶</a></h2>
+<p>Each blockchain supports different NFT providers:</p>
+<pre class="mermaid"><code>flowchart TD
+    A[Choose Chain] --&gt; B{Which Chain?}
+    B --&gt;|Solana| C[CollectorCrypt]
+    B --&gt;|Base| D[Beezie]
+
+    C --&gt; E[Graded Pokemon Cards&lt;br/&gt;PSA/BGS]
+    D --&gt; F[Graded Pokemon Cards&lt;br/&gt;PSA/BGS]
+
+    E --&gt; G[Create Gacha]
+    D --&gt; G
+
+    G --&gt; H[Pull Cards]
+    H --&gt; I[Buyback Option]</code></pre>
+<h2 id="solana">Solana<a class="headerlink" href="#solana" title="Permanent link">¶</a></h2>
+<p><strong>Provider:</strong> CollectorCrypt</p>
+<ul>
+<li>Graded Pokemon card NFTs with insured FMV</li>
+<li>On-chain metadata with value attestation</li>
+<li>Available on: MagicEden, Solanart, Tensor</li>
+</ul>
+<h3 id="example-create-solana-gacha">Example: Create Solana Gacha<a class="headerlink" href="#example-create-solana-gacha" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vintage Charizard Claw"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PSA graded cards"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"tier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"legendary"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"price_usd"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"buyback_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.90</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"source_nfts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"mint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7xKpMK1gV..."</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"chain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"solana"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"collectorcrypt"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Charizard PSA 9"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://..."</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"estimatedValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="base-coming-soon">Base (Coming Soon)<a class="headerlink" href="#base-coming-soon" title="Permanent link">¶</a></h2>
+<p><strong>Provider:</strong> Beezie</p>
+<ul>
+<li>Cross-chain graded Pokemon cards</li>
+<li>EVM-native NFTs</li>
+<li>Purchased via Beezie.io marketplace</li>
+</ul>
+<h3 id="expected-example-create-base-gacha">Expected Example: Create Base Gacha<a class="headerlink" href="#expected-example-create-base-gacha" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Base Pokemon Claw"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beezie graded cards"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"tier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"premium"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"price_usd"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"buyback_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.90</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"source_nfts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"mint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0x1234..."</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"chain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"base"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"beezie"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pikachu PSA 10"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://..."</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"estimatedValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="important-notes">Important Notes<a class="headerlink" href="#important-notes" title="Permanent link">¶</a></h2>
+<h3 id="single-chain-per-gacha">Single Chain Per Gacha<a class="headerlink" href="#single-chain-per-gacha" title="Permanent link">¶</a></h3>
+<p>Each gacha pack must contain NFTs from a <strong>single chain</strong>. You cannot mix Solana and Base NFTs in the same gacha.</p>
+<h3 id="chain-selection-at-creation">Chain Selection at Creation<a class="headerlink" href="#chain-selection-at-creation" title="Permanent link">¶</a></h3>
+<p>When creating a gacha, all NFTs must have the same <code>chain</code> value:</p>
+<ul>
+<li>✅ Valid: All <code>chain: "solana"</code></li>
+<li>✅ Valid: All <code>chain: "base"</code> </li>
+<li>❌ Invalid: Mixed chains</li>
+</ul>
+<h3 id="buyback">Buyback<a class="headerlink" href="#buyback" title="Permanent link">¶</a></h3>
+<p>Buybacks work on both chains:
+- Solana: NFT transferred to platform vault
+- Base: NFT transferred to Base vault (when available)</p>
+<h3 id="payment">Payment<a class="headerlink" href="#payment" title="Permanent link">¶</a></h3>
+<p>Payments are handled via x402 protocol and can be made in:
+- USDC on Solana
+- USDC on Base (when available)</p>
+<h2 id="provider-comparison">Provider Comparison<a class="headerlink" href="#provider-comparison" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>CollectorCrypt (Solana)</th>
+<th>Beezie (Base)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFT Type</td>
+<td>SPL Tokens</td>
+<td>ERC-721</td>
+</tr>
+<tr>
+<td>Grading</td>
+<td>PSA, BGS</td>
+<td>PSA, BGS</td>
+</tr>
+<tr>
+<td>FMV Model</td>
+<td>On-chain insured</td>
+<td>On-chain insured</td>
+</tr>
+<tr>
+<td>Marketplace</td>
+<td>MagicEden</td>
+<td>Beezie.io</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>Live</td>
+<td>Coming Soon</td>
+</tr>
+</tbody>
+</table>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">¶</a></h2>
+<p><strong>Q: Can I create a gacha with cards from both Solana and Base?</strong></p>
+<p>No. Each gacha must use NFTs from a single chain. Create separate gachas for each chain.</p>
+<p><strong>Q: When will Base support be available?</strong></p>
+<p>Base support is planned after TEE vault deployment for Base chain. Follow @mysterygift for updates.</p>
+<p><strong>Q: Can I buy packs on one chain and pull on another?</strong></p>
+<p>No, purchases and pulls happen on the same chain as the gacha.</p>
+<p><strong>Q: What's the difference between providers?</strong></p>
+<p>Both offer graded Pokemon cards with insured FMV. The main difference is the blockchain:
+- CollectorCrypt: Solana (lower fees, fast)
+- Beezie: Base (EVM ecosystem)</p>
+</section>
+</main>
+</div>
+<hr/><footer>
+<div class="terminal-mkdocs-footer-grid">
+<div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+</div>
+</footer>
+</div>
+<div aria-labelledby="searchModalLabel" aria-modal="true" class="modal" id="mkdocs_search_modal" role="alertdialog" tabindex="-1">
+<div class="modal-dialog modal-lg" role="search">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="searchModalLabel">Search</h5>
+<button aria-label="Close" class="close btn btn-default btn-ghost" data-dismiss="modal" type="button">x</button>
+</div>
+<div class="modal-body">
+<p id="searchInputLabel">Type to start searching</p>
+<form>
+<div class="form-group">
+<input aria-labelledby="searchInputLabel" class="form-control" id="mkdocs-search-query" placeholder="" title="Please enter search terms here" type="search"/>
+</div>
+</form>
+<div data-no-results-text="No document matches found" id="mkdocs-search-results"></div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

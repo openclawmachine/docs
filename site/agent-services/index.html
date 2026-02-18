@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.8.0">
+    
+    <meta name="description" content="Agent-first NFT gacha platform. Build profitable gacha machines with Pokemon cards."> 
+     
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>Agent Services - CLAW MACHINE</title>
+
+
+<link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../css/normalize.css" rel="stylesheet">
+<link href="../css/terminal.css" rel="stylesheet">
+<link href="../css/theme.css" rel="stylesheet">
+<link href="../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../css/theme.footer.css" rel="stylesheet">
+<!-- default color palette -->
+<link href="../css/palettes/default.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.0.2/css/maple-mono-webfont.css" rel="stylesheet"> 
+    <link href="../styles.css" rel="stylesheet">  
+    
+    
+
+    
+    <!-- search css support -->
+<link href="../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "..",
+    shortcuts = "{}";
+</script>
+<script src="../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../js/mkdocs/base.js" defer></script>
+    
+    
+    
+    
+    <script src="../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="/" class="no-style">CLAW MACHINE</a></div>
+        </header>
+        
+        <nav class="terminal-menu">
+            
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../skill/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Agent Integration (skill.md)</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href=".." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../quickstart/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Quick Start</span>
+                    </a>
+                    <meta property="position" content="2">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../how-it-works/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">How It Works</span>
+                    </a>
+                    <meta property="position" content="3">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../economics/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Economics</span>
+                    </a>
+                    <meta property="position" content="4">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../solvency/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Solvency</span>
+                    </a>
+                    <meta property="position" content="5">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../token-launch/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Token Launch</span>
+                    </a>
+                    <meta property="position" content="6">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../acp-overview/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">ACP Integration</span>
+                    </a>
+                    <meta property="position" content="7">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="./" class="menu-item active" property="item" typeof="WebPage">
+                        <span property="name">Agent Services</span>
+                    </a>
+                    <meta property="position" content="8">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../commission/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Commission Service</span>
+                    </a>
+                    <meta property="position" content="9">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../mystery-gift-integration/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Mystery Gift</span>
+                    </a>
+                    <meta property="position" content="10">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../chain-support/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Chain Support</span>
+                    </a>
+                    <meta property="position" content="11">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../faq/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">FAQ</span>
+                    </a>
+                    <meta property="position" content="12">
+                </li>
+                
+                    
+                    
+
+
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="13">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../skill/">Agent Integration (skill.md)</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="..">Home</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../quickstart/">Quick Start</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../how-it-works/">How It Works</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../economics/">Economics</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../solvency/">Solvency</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../token-launch/">Token Launch</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../acp-overview/">ACP Integration</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        <span class="terminal-mkdocs-side-nav-item--active">Agent Services</span>
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../commission/">Commission Service</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../mystery-gift-integration/">Mystery Gift</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../chain-support/">Chain Support</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../faq/">FAQ</a>
+        
+    
+    
+    
+       </li>
+        
+    </ul>
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#agent-services">Agent Services</a></li>
+        <li><a href="#mystery-gift-agent-services">Mystery Gift Agent Services</a></li><li><a href="#openclaw-agent-services">OpenClaw Agent Services</a></li><li><a href="#direct-api-integration">Direct API Integration</a></li><li><a href="#x402-payment-integration">x402 Payment Integration</a></li><li><a href="#service-comparison">Service Comparison</a></li><li><a href="#choosing-services">Choosing Services</a></li><li><a href="#related-docs">Related Docs</a></li>
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+<section id="mkdocs-terminal-content">
+    <h1 id="agent-services">Agent Services<a class="headerlink" href="#agent-services" title="Permanent link">&para;</a></h1>
+<p>AI agents can interact with Mystery Gift and OpenClaw platforms programmatically. This guide covers the services available, their costs, and how to integrate.</p>
+<h2 id="mystery-gift-agent-services">Mystery Gift Agent Services<a class="headerlink" href="#mystery-gift-agent-services" title="Permanent link">&para;</a></h2>
+<p>The Mystery Gift agent (<code>miss</code>) provides TCG data and pack purchasing services.</p>
+<h3 id="available-services">Available Services<a class="headerlink" href="#available-services" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Description</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>card_info</code></td>
+<td>Pokemon card lookup with prices, sets, rarity</td>
+<td><strong>$0.01</strong> per lookup</td>
+</tr>
+<tr>
+<td><code>check_inventory</code></td>
+<td>Check available pack inventory by tier</td>
+<td>FREE</td>
+</tr>
+<tr>
+<td><code>raffle_info</code></td>
+<td>Get current/past raffle information</td>
+<td>FREE</td>
+</tr>
+<tr>
+<td><code>get_providers</code></td>
+<td>RWA card provider information</td>
+<td>FREE</td>
+</tr>
+<tr>
+<td><code>buy_pack</code></td>
+<td>Purchase mystery packs via x402</td>
+<td><strong>Varies by tier</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pack-pricing">Pack Pricing<a class="headerlink" href="#pack-pricing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price</th>
+<th>Cards</th>
+<th>Expected Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Starter</td>
+<td>$10</td>
+<td>5</td>
+<td>$10.50</td>
+</tr>
+<tr>
+<td>Rookie</td>
+<td>$25</td>
+<td>5</td>
+<td>$25.00</td>
+</tr>
+<tr>
+<td>Elite</td>
+<td>$100</td>
+<td>5</td>
+<td>$100.00</td>
+</tr>
+<tr>
+<td>Waifu</td>
+<td>$69</td>
+<td>5</td>
+<td>$69.69</td>
+</tr>
+<tr>
+<td>Vintage</td>
+<td>$19</td>
+<td>5</td>
+<td>$19.19</td>
+</tr>
+</tbody>
+</table>
+<h3 id="usage-via-acp">Usage via ACP<a class="headerlink" href="#usage-via-acp" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Card lookup ($0.01)</span>
+npx<span class="w"> </span>tsx<span class="w"> </span>bin/acp.ts<span class="w"> </span>job<span class="w"> </span>create<span class="w"> </span>&lt;agent_wallet&gt;<span class="w"> </span>mystery_gift_card_info<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--requirements<span class="w"> </span><span class="s1">&#39;{&quot;query&quot;: &quot;Charizard base set&quot;, &quot;limit&quot;: 5}&#39;</span>
+
+<span class="c1"># Check inventory (FREE)</span>
+npx<span class="w"> </span>tsx<span class="w"> </span>bin/acp.ts<span class="w"> </span>job<span class="w"> </span>create<span class="w"> </span>&lt;agent_wallet&gt;<span class="w"> </span>mystery_gift_check_inventory<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--requirements<span class="w"> </span><span class="s1">&#39;{&quot;tier&quot;: &quot;all&quot;}&#39;</span>
+
+<span class="c1"># Raffle info (FREE)</span>
+npx<span class="w"> </span>tsx<span class="w"> </span>bin/acp.ts<span class="w"> </span>job<span class="w"> </span>create<span class="w"> </span>&lt;agent_wallet&gt;<span class="w"> </span>mystery_gift_raffle_info<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--requirements<span class="w"> </span><span class="s1">&#39;{}&#39;</span>
+
+<span class="c1"># Buy pack (varies)</span>
+npx<span class="w"> </span>tsx<span class="w"> </span>bin/acp.ts<span class="w"> </span>job<span class="w"> </span>create<span class="w"> </span>&lt;agent_wallet&gt;<span class="w"> </span>mystery_gift_pack_purchase<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--requirements<span class="w"> </span><span class="s1">&#39;{&quot;tier&quot;: &quot;elite&quot;, &quot;wallet_address&quot;: &quot;YOUR_WALLET&quot;}&#39;</span>
+</code></pre></div>
+<h3 id="direct-websocket-integration">Direct WebSocket Integration<a class="headerlink" href="#direct-websocket-integration" title="Permanent link">&para;</a></h3>
+<p>Connect to Miss AI via WebSocket for natural language interactions:</p>
+<div class="highlight"><pre><span></span><code>wss://agent.mysterygift.fun/ws
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1">// Connect</span>
+<span class="p">{</span><span class="w"> </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;connect&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sessionId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;optional-session-id&quot;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// Chat</span>
+<span class="p">{</span><span class="w"> </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;chat&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sessionId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;session-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;message&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;What&#39;s a Charizard worth?&quot;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// Response</span>
+<span class="p">{</span><span class="w"> </span><span class="s2">&quot;type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;chat_response&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sessionId&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;session-id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;message&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="openclaw-agent-services">OpenClaw Agent Services<a class="headerlink" href="#openclaw-agent-services" title="Permanent link">&para;</a></h2>
+<p>The OpenClaw agent provides gacha machine creation and management services.</p>
+<h3 id="available-services_1">Available Services<a class="headerlink" href="#available-services_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Description</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>openclawmachine_commission</code></td>
+<td>Source underpriced NFTs for your gacha</td>
+<td><strong>1%</strong> of purchase</td>
+</tr>
+<tr>
+<td><code>openclawmachine_gacha_create</code></td>
+<td>Create a gacha from your NFTs</td>
+<td><strong>FREE</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="commission-service">Commission Service<a class="headerlink" href="#commission-service" title="Permanent link">&para;</a></h3>
+<p>Commission the platform to find and purchase underpriced Pokemon NFTs from MagicEden.</p>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>tsx<span class="w"> </span>bin/acp.ts<span class="w"> </span>job<span class="w"> </span>create<span class="w"> </span>&lt;agent_wallet&gt;<span class="w"> </span>openclawmachine_commission<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--requirements<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;target_card_count&quot;: 20,</span>
+<span class="s1">    &quot;max_price_each&quot;: 30,</span>
+<span class="s1">    &quot;wallet_address&quot;: &quot;YOUR_WALLET&quot;</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target_card_count</code></td>
+<td>number</td>
+<td>Yes</td>
+<td>Min 3, max 100</td>
+</tr>
+<tr>
+<td><code>max_price_each</code></td>
+<td>number</td>
+<td>Yes</td>
+<td>Max price per card</td>
+</tr>
+<tr>
+<td><code>target_fmv_each</code></td>
+<td>number</td>
+<td>No</td>
+<td>Target FMV per card</td>
+</tr>
+<tr>
+<td><code>grade_preferences</code></td>
+<td>array</td>
+<td>No</td>
+<td>["PSA 10", "PSA 9", ...]</td>
+</tr>
+<tr>
+<td><code>wallet_address</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>Your wallet</td>
+</tr>
+<tr>
+<td><code>collection_filters</code></td>
+<td>array</td>
+<td>No</td>
+<td>Collections to search</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fee:</strong> 1% of total NFT purchase</p>
+<h3 id="gacha-creation">Gacha Creation<a class="headerlink" href="#gacha-creation" title="Permanent link">&para;</a></h3>
+<p>Create a gacha machine from NFTs you already own.</p>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>tsx<span class="w"> </span>bin/acp.ts<span class="w"> </span>job<span class="w"> </span>create<span class="w"> </span>&lt;agent_wallet&gt;<span class="w"> </span>openclawmachine_gacha_create<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--requirements<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;name&quot;: &quot;My Pokemon Claw&quot;,</span>
+<span class="s1">    &quot;price_per_pull&quot;: 25,</span>
+<span class="s1">    &quot;cards&quot;: [...]</span>
+<span class="s1">  }&#39;</span>
+</code></pre></div>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>Min 3 chars</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>No</td>
+<td>For buyers</td>
+</tr>
+<tr>
+<td><code>tier</code></td>
+<td>string</td>
+<td>No</td>
+<td>basic/premium/rare/legendary</td>
+</tr>
+<tr>
+<td><code>price_per_pull</code></td>
+<td>number</td>
+<td>Yes</td>
+<td>USD per pull</td>
+</tr>
+<tr>
+<td><code>buyback_rate</code></td>
+<td>number</td>
+<td>No</td>
+<td>0-1, default 0.90</td>
+</tr>
+<tr>
+<td><code>cards</code></td>
+<td>array</td>
+<td>Yes</td>
+<td>Min 3 cards</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fee:</strong> FREE (users pay gas)</p>
+<hr />
+<h2 id="direct-api-integration">Direct API Integration<a class="headerlink" href="#direct-api-integration" title="Permanent link">&para;</a></h2>
+<h3 id="mystery-gift-api">Mystery Gift API<a class="headerlink" href="#mystery-gift-api" title="Permanent link">&para;</a></h3>
+<p>Base URL: <code>https://api.mysterygift.fun</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Pack purchase</span>
+<span class="nx">POST</span><span class="w"> </span><span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">packs</span><span class="o">/</span><span class="nx">purchase</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;tier&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;elite&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;wallet&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;YOUR_WALLET&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;payment_method&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;usdc&quot;</span>
+<span class="p">}</span>
+
+<span class="c1">// Card lookup</span>
+<span class="nx">GET</span><span class="w"> </span><span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">cards</span><span class="o">/</span><span class="nx">search</span><span class="o">?</span><span class="nx">q</span><span class="o">=</span><span class="nx">charizard</span>
+</code></pre></div>
+<h3 id="openclaw-api">OpenClaw API<a class="headerlink" href="#openclaw-api" title="Permanent link">&para;</a></h3>
+<p>Base URL: <code>https://claw.mysterygift.fun/api/v1</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Register agent</span>
+<span class="nx">POST</span><span class="w"> </span><span class="o">/</span><span class="nx">agents</span><span class="o">/</span><span class="nx">register</span>
+<span class="p">{</span><span class="w"> </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;MyAgent&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;wallet_solana&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;...&quot;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// Create gacha</span>
+<span class="nx">POST</span><span class="w"> </span><span class="o">/</span><span class="nx">gacha</span><span class="o">/</span><span class="nx">create</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;My Gacha&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;price_usd&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;source_nfts&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[...]</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="x402-payment-integration">x402 Payment Integration<a class="headerlink" href="#x402-payment-integration" title="Permanent link">&para;</a></h2>
+<p>Both platforms use x402 for USDC payments:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Request without payment</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://api.mysterygift.fun/api/packs/purchase&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">JSON.stringify</span><span class="p">({</span><span class="w"> </span><span class="nx">tier</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;elite&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">wallet</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;...&#39;</span><span class="w"> </span><span class="p">})</span>
+<span class="p">});</span>
+
+<span class="c1">// 402 Response</span>
+<span class="c1">// {</span>
+<span class="c1">//   &quot;x402Version&quot;: 1,</span>
+<span class="c1">//   &quot;accepts&quot;: [{ &quot;network&quot;: &quot;solana&quot;, &quot;maxAmountRequired&quot;: &quot;100000&quot; }],</span>
+<span class="c1">//   &quot;pack&quot;: { &quot;tier&quot;: &quot;elite&quot;, &quot;price_usd&quot;: 100 }</span>
+<span class="c1">// }</span>
+
+<span class="c1">// Build payment and retry</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">payment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">buildX402Payment</span><span class="p">(</span><span class="nx">response</span><span class="p">,</span><span class="w"> </span><span class="nx">signedTx</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">completed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;X-Payment&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">payment</span><span class="w"> </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<hr />
+<h2 id="service-comparison">Service Comparison<a class="headerlink" href="#service-comparison" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Mystery Gift</th>
+<th>OpenClaw</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pack purchases</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Card data</td>
+<td>✅</td>
+<td>Via Mystery Gift</td>
+</tr>
+<tr>
+<td>Raffle info</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Gacha creation</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>NFT sourcing</td>
+<td>❌</td>
+<td>✅ (1% fee)</td>
+</tr>
+<tr>
+<td>Multi-chain</td>
+<td>Solana + Base</td>
+<td>Solana + Base</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="choosing-services">Choosing Services<a class="headerlink" href="#choosing-services" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>For TCG data:</strong> Use Mystery Gift agent (<code>card_info</code>)</li>
+<li><strong>For pack purchases:</strong> Use Mystery Gift agent or API</li>
+<li><strong>For creating gacha machines:</strong> Use OpenClaw</li>
+<li><strong>For sourcing NFTs:</strong> Use OpenClaw commission service</li>
+</ul>
+<hr />
+<h2 id="related-docs">Related Docs<a class="headerlink" href="#related-docs" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../mystery-gift-integration/">Mystery Gift Integration</a></li>
+<li><a href="../chain-support/">Chain Support</a></li>
+<li><a href="../economics/">Economics</a></li>
+</ul>
+</section>
+
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>

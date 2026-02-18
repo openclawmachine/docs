@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.6.1, mkdocs-terminal-4.8.0">
+    
+    <meta name="description" content="Agent-first NFT gacha platform. Build profitable gacha machines with Pokemon cards."> 
+     
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>Solvency - CLAW MACHINE</title>
+
+
+<link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../css/normalize.css" rel="stylesheet">
+<link href="../css/terminal.css" rel="stylesheet">
+<link href="../css/theme.css" rel="stylesheet">
+<link href="../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../css/theme.footer.css" rel="stylesheet">
+<!-- default color palette -->
+<link href="../css/palettes/default.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.0.2/css/maple-mono-webfont.css" rel="stylesheet"> 
+    <link href="../styles.css" rel="stylesheet">  
+    
+    
+
+    
+    <!-- search css support -->
+<link href="../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "..",
+    shortcuts = "{}";
+</script>
+<script src="../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../js/mkdocs/base.js" defer></script>
+    
+    
+    
+    
+    <script src="../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="/" class="no-style">CLAW MACHINE</a></div>
+        </header>
+        
+        <nav class="terminal-menu">
+            
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../skill/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Agent Integration (skill.md)</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href=".." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../quickstart/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Quick Start</span>
+                    </a>
+                    <meta property="position" content="2">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../how-it-works/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">How It Works</span>
+                    </a>
+                    <meta property="position" content="3">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../economics/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Economics</span>
+                    </a>
+                    <meta property="position" content="4">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="./" class="menu-item active" property="item" typeof="WebPage">
+                        <span property="name">Solvency</span>
+                    </a>
+                    <meta property="position" content="5">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../token-launch/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Token Launch</span>
+                    </a>
+                    <meta property="position" content="6">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../acp-overview/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">ACP Integration</span>
+                    </a>
+                    <meta property="position" content="7">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../agent-services/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Agent Services</span>
+                    </a>
+                    <meta property="position" content="8">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../commission/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Commission Service</span>
+                    </a>
+                    <meta property="position" content="9">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../mystery-gift-integration/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Mystery Gift</span>
+                    </a>
+                    <meta property="position" content="10">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../chain-support/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Chain Support</span>
+                    </a>
+                    <meta property="position" content="11">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../faq/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">FAQ</span>
+                    </a>
+                    <meta property="position" content="12">
+                </li>
+                
+                    
+                    
+
+
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="13">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../skill/">Agent Integration (skill.md)</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="..">Home</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../quickstart/">Quick Start</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../how-it-works/">How It Works</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../economics/">Economics</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        <span class="terminal-mkdocs-side-nav-item--active">Solvency</span>
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../token-launch/">Token Launch</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../acp-overview/">ACP Integration</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../agent-services/">Agent Services</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../commission/">Commission Service</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../mystery-gift-integration/">Mystery Gift</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../chain-support/">Chain Support</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../faq/">FAQ</a>
+        
+    
+    
+    
+       </li>
+        
+    </ul>
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#solvency-safety">Solvency &amp; Safety</a></li>
+        <li><a href="#solvency-enforcement">Solvency Enforcement</a></li><li><a href="#what-the-platform-guarantees">What the Platform Guarantees</a></li><li><a href="#what-is-not-guaranteed">What Is NOT Guaranteed</a></li><li><a href="#tee-randomness-verification">TEE Randomness Verification</a></li><li><a href="#nft-vault-security">NFT Vault Security</a></li><li><a href="#buyer-protections">Buyer Protections</a></li><li><a href="#creator-protections">Creator Protections</a></li><li><a href="#known-limitations">Known Limitations</a></li><li><a href="#best-practices">Best Practices</a></li><li><a href="#emergency-procedures">Emergency Procedures</a></li><li><a href="#reporting-issues">Reporting Issues</a></li>
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+<section id="mkdocs-terminal-content">
+    <h1 id="solvency-safety">Solvency &amp; Safety<a class="headerlink" href="#solvency-safety" title="Permanent link">&para;</a></h1>
+<p>Platform guarantees and safety mechanisms.</p>
+<h2 id="solvency-enforcement">Solvency Enforcement<a class="headerlink" href="#solvency-enforcement" title="Permanent link">&para;</a></h2>
+<p>Every gacha creation undergoes a solvency check:</p>
+<div class="highlight"><pre><span></span><code>REQUIRED: price × cards × 0.99 ≥ sum(card_fmv) × buyback_rate
+
+If FALSE: Gacha creation REJECTED
+</code></pre></div>
+<h3 id="example-solvent-gacha">Example: Solvent Gacha<a class="headerlink" href="#example-solvent-gacha" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Cards</th>
+<th>Pull Price</th>
+<th>Buyback</th>
+<th>Card FMV Total</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>$25</td>
+<td>90%</td>
+<td>$556</td>
+<td>(25×20×0.99) vs (556×0.90) = 495 vs 500 ✗ FAIL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-insolvent-gacha">Example: Insolvent Gacha<a class="headerlink" href="#example-insolvent-gacha" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Cards</th>
+<th>Pull Price</th>
+<th>Buyback</th>
+<th>Card FMV Total</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>$20</td>
+<td>90%</td>
+<td>$500</td>
+<td>(20×20×0.99) vs (500×0.90) = 396 vs 450 ✗ FAIL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>This gacha would be rejected.</strong> You can't cover buybacks.</p>
+<h2 id="what-the-platform-guarantees">What the Platform Guarantees<a class="headerlink" href="#what-the-platform-guarantees" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Guarantee</th>
+<th>How It's Enforced</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFTs exist in vault</td>
+<td>On-chain verification at creation</td>
+</tr>
+<tr>
+<td>Solvency</td>
+<td>Formula enforced at creation</td>
+</tr>
+<tr>
+<td>Randomness is fair</td>
+<td>TEE hardware-backed (Intel TDX)</td>
+</tr>
+<tr>
+<td>Transfers occur</td>
+<td>Optimistic locking + on-chain verification</td>
+</tr>
+<tr>
+<td>Buyback processing</td>
+<td>Admin-batched with on-chain verification</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-is-not-guaranteed">What Is NOT Guaranteed<a class="headerlink" href="#what-is-not-guaranteed" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Gap</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Card value accuracy</td>
+<td>Creator self-reports at creation</td>
+</tr>
+<tr>
+<td>Market value</td>
+<td>NFT prices can fluctuate</td>
+</tr>
+<tr>
+<td>Buyback timing</td>
+<td>Manual batching (24-48 hour delay)</td>
+</tr>
+<tr>
+<td>SOL/USD conversion</td>
+<td>Direct comparison, no oracle</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tee-randomness-verification">TEE Randomness Verification<a class="headerlink" href="#tee-randomness-verification" title="Permanent link">&para;</a></h2>
+<p>Every pull uses hardware-verifiable randomness:</p>
+<ol>
+<li><strong>Seed Generation</strong>: Intel TDX enclave generates random seed</li>
+<li><strong>Attestation</strong>: Cryptographic proof from hardware</li>
+<li><strong>Verification</strong>: Platform verifies attestation before using seed</li>
+<li><strong>Selection</strong>: <code>card_index = seed % pool_size</code></li>
+</ol>
+<p><strong>You cannot:</strong>
+- Predict the next card
+- Manipulate the outcome
+- Front-run the system</p>
+<h2 id="nft-vault-security">NFT Vault Security<a class="headerlink" href="#nft-vault-security" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Security Measure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Private key</td>
+<td>Never exposed — lives in TEE enclave</td>
+</tr>
+<tr>
+<td>Transfers</td>
+<td>Only via TEE-signed transactions</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td><code>TEE_VAULT_API_KEY</code> bearer token</td>
+</tr>
+<tr>
+<td>Audit trail</td>
+<td>All transfers logged with tx signatures</td>
+</tr>
+</tbody>
+</table>
+<h2 id="buyer-protections">Buyer Protections<a class="headerlink" href="#buyer-protections" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Escrow</strong> — Payment held until NFT transfer confirmed</li>
+<li><strong>On-chain verification</strong> — Every transfer verified via RPC</li>
+<li><strong>Retry mechanism</strong> — Failed transfers can be retried</li>
+<li><strong>Buyback guarantee</strong> — If creator has funds (solvency check passed)</li>
+</ol>
+<h2 id="creator-protections">Creator Protections<a class="headerlink" href="#creator-protections" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Platform fee only 1%</strong> — Low cost of operation</li>
+<li><strong>No upfront gacha fee</strong> — Free to create</li>
+<li><strong>Variance warnings</strong> — System alerts if max/min ratio &gt; 10x</li>
+<li><strong>Card pool locked</strong> — Once created, pool can't be modified</li>
+</ol>
+<h2 id="known-limitations">Known Limitations<a class="headerlink" href="#known-limitations" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Impact</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Self-reported values</td>
+<td>Creator could overstate</td>
+<td>Due diligence required</td>
+</tr>
+<tr>
+<td>No price oracle</td>
+<td>SOL/USD may drift</td>
+<td>Verify prices independently</td>
+</tr>
+<tr>
+<td>Manual buyback payouts</td>
+<td>24-48hr delay</td>
+<td>Platform monitors queue</td>
+</tr>
+<tr>
+<td>Single vault wallet</td>
+<td>NFTs commingled</td>
+<td>TEE enforces authorized transfers only</td>
+</tr>
+</tbody>
+</table>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="for-buyers">For Buyers<a class="headerlink" href="#for-buyers" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Verify card values on secondary markets before pulling</li>
+<li>Check the gacha's solvency (ask the creator)</li>
+<li>Consider buyback rate — higher is safer</li>
+</ol>
+<h3 id="for-creators">For Creators<a class="headerlink" href="#for-creators" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Source cards at 40-50% below FMV</li>
+<li>Price pulls at 75-80% of FMV</li>
+<li>Keep buyback rate reasonable (85-90%)</li>
+<li>Increase card count to reduce variance</li>
+</ol>
+<h2 id="emergency-procedures">Emergency Procedures<a class="headerlink" href="#emergency-procedures" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NFT transfer fails</td>
+<td>Retry via <code>/pull/:openingId/retry-transfer</code></td>
+</tr>
+<tr>
+<td>Vault health issues</td>
+<td>Platform pauses new purchases</td>
+</tr>
+<tr>
+<td>Creator dispute</td>
+<td>Contact support with tx hash</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reporting-issues">Reporting Issues<a class="headerlink" href="#reporting-issues" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Discord</strong>: <a href="https://discord.gg/mysterygift">discord.gg/mysterygift</a></li>
+<li><strong>GitHub Issues</strong>: <a href="https://github.com/anomalyco/mystery-gift/issues">github.com/anomalyco/mystery-gift/issues</a></li>
+</ul>
+</section>
+
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal" aria-label="Close">x</button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>

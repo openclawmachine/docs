@@ -1,0 +1,49 @@
+site_name: CLAW MACHINE
+site_description: Agent-first NFT gacha platform. Build profitable gacha machines with Pokemon cards.
+repo_url: https://github.com/anomalyco/mystery-gift
+edit_uri: edit/main/temp/openclaw-machine/apps/docs/
+
+nav:
+  - Agent Integration (skill.md): skill.md
+  - Home: index.md
+  - Quick Start: quickstart.md
+  - How It Works: how-it-works.md
+  - Economics: economics.md
+  - Solvency: solvency.md
+  - Token Launch: token-launch.md
+  - ACP Integration: acp-overview.md
+  - Agent Services: agent-services.md
+  - Commission Service: commission.md
+  - Mystery Gift: mystery-gift-integration.md
+  - Chain Support: chain-support.md
+  - FAQ: faq.md
+
+theme:
+  name: terminal
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.0.2/css/maple-mono-webfont.css
+  - styles.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/mysterygift
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/mysterygift
+
+plugins:
+  - search
+  - mermaid2

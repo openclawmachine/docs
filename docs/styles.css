@@ -1,0 +1,213 @@
+/* OpenClaw Theme for MkDocs Terminal */
+
+/* Import MapleMono font */
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.0.2/css/maple-mono-webfont.css');
+
+:root {
+  /* OpenClaw color palette */
+  --oc-bg: #0a0a0c;
+  --oc-bg-elevated: #101014;
+  --oc-surface: #141418;
+  --oc-border: rgba(255, 255, 255, 0.06);
+  --oc-text: #fafafa;
+  --oc-text-secondary: #a1a1aa;
+  --oc-text-muted: #71717a;
+  --oc-accent: #ff4444;
+  --oc-accent-hover: #ff5555;
+  --oc-accent-dim: rgba(255, 68, 68, 0.12);
+  --oc-gold: #ffd700;
+  --oc-purple: #a78bfa;
+  --oc-success: #34d399;
+  --oc-error: #f87171;
+}
+
+body {
+  font-family: 'Maple Mono', 'Sometype Mono', monospace;
+  background-color: var(--oc-bg);
+  color: var(--oc-text);
+}
+
+/* Terminal theme overrides */
+[data-theme="terminal"] {
+  --md-typeset-a-color: var(--oc-accent);
+  --md-accent-fg-color: var(--oc-accent);
+  --md-primary-fg-color: var(--oc-accent);
+  --md-primary-bg-color: var(--oc-bg);
+  --md-code-fg-color: var(--oc-text);
+  --md-code-bg-color: var(--oc-surface);
+}
+
+/* Code blocks */
+pre, code {
+  font-family: 'Maple Mono', 'Sometype Mono', monospace !important;
+  background: var(--oc-surface) !important;
+  border: 1px solid var(--oc-border);
+  border-radius: 4px;
+}
+
+code {
+  padding: 0.15em 0.4em;
+  font-size: 0.9em;
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+}
+
+/* Links */
+a {
+  color: var(--oc-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+a:hover {
+  border-bottom-color: var(--oc-accent);
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Maple Mono', monospace;
+  font-weight: 600;
+  color: var(--oc-text);
+}
+
+h1 {
+  color: var(--oc-accent);
+  border-bottom: 2px solid var(--oc-accent);
+  padding-bottom: 0.5rem;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+th, td {
+  border: 1px solid var(--oc-border);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background: var(--oc-surface);
+  color: var(--oc-accent);
+}
+
+tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Admonitions */
+.admonition {
+  border-left: 4px solid var(--oc-accent);
+  background: var(--oc-surface);
+}
+
+.admonition-title {
+  background: var(--oc-accent-dim);
+  color: var(--oc-accent);
+}
+
+/* Mermaid diagrams */
+.mermaid {
+  background: var(--oc-surface);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Navigation */
+.md-nav__link {
+  font-family: 'Maple Mono', monospace;
+}
+
+.md-nav__link--active {
+  color: var(--oc-accent);
+}
+
+/* Buttons */
+.md-button {
+  font-family: 'Maple Mono', monospace;
+  background: var(--oc-accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}
+
+.md-button:hover {
+  background: var(--oc-accent-hover);
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 68, 68, 0.3);
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--oc-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--oc-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--oc-accent);
+}
+
+/* Terminal prompt styling */
+.terminal-example {
+  background: #1a1a1f;
+  border: 1px solid var(--oc-border);
+  border-radius: 6px;
+  padding: 1rem;
+  font-family: 'Maple Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.terminal-prompt {
+  color: var(--oc-accent);
+}
+
+.terminal-output {
+  color: var(--oc-text-secondary);
+}
+
+/* Highlight important sections */
+.highlight {
+  background: var(--oc-accent-dim);
+  border-left: 3px solid var(--oc-accent);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+}
+
+/* Tabs */
+.tabbed-labels {
+  font-family: 'Maple Mono', monospace;
+}
+
+.tabbed-labels .label {
+  background: var(--oc-surface);
+  border: 1px solid var(--oc-border);
+}
+
+.tabbed-labels .label.selected {
+  background: var(--oc-accent);
+  color: white;
+  border-color: var(--oc-accent);
+}
