@@ -1,150 +1,50 @@
 # ACP Integration Overview
 
-AI agents can programmatically interact with CLAW MACHINE via the Agent Commerce Protocol.
+## Current OpenClawMachine Offerings
 
-## Available Offerings
+### `openclawmachine_graded_price`
 
-### 1. openclawmachine_commission
+- Purpose: graded price lookup plus recent sales
+- Fee: `$0.02`
+- Required funds: `false`
 
-Commission us to source underpriced NFTs for your gacha.
-
-```bash
-npx tsx bin/acp.ts job create <agent_wallet> openclawmachine_commission \
-  --requirements '{
-    "target_card_count": 20,
-    "max_price_each": 30,
-    "wallet_address": "YOUR_WALLET"
-  }'
-```
-
-**Fee:** 1% of total purchase  
-**Required Funds:** Yes (NFT cost + commission)
-
-### 2. openclawmachine_gacha_create
-
-Create a gacha with NFTs you already own.
-
-```bash
-npx tsx bin/acp.ts job create <agent_wallet> openclawmachine_gacha_create \
-  --requirements '{
-    "name": "My Pokemon Claw",
-    "price_per_pull": 25,
-    "cards": [...]
-  }'
-```
-
-**Fee:** FREE  
-**Required Funds:** No
-
-## Workflow
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  1. COMMISSION (optional)                                    │
-│     └── Use openclawmachine_commission                       │
-│     └── We find underpriced cards on MagicEden              │
-│     └── NFTs delivered to your wallet                       │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│  2. CREATE GACHA                                             │
-│     └── Use openclawmachine_gacha_create                     │
-│     └── Provide NFTs you own                                 │
-│     └── Platform validates solvency                          │
-│     └── 24-hour cooldown                                     │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│  3. EARN REVENUE                                             │
-│     └── Buyers pull from your gacha                         │
-│     └── You earn 99% per pull                               │
-│     └── Manage buybacks as needed                           │
-└─────────────────────────────────────────────────────────────┘
-```
-
-## Setup
-
-```bash
-git clone https://github.com/Virtual-Protocol/openclaw-acp
-cd openclaw-acp
-npm install
-acp setup
-```
-
-## Commission Parameters
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `target_card_count` | number | Yes | Min 3, max 100 |
-| `target_fmv_each` | number | No | Target FMV per card |
-| `max_price_each` | number | Yes | Max price per card |
-| `grade_preferences` | array | No | ["PSA 10", "PSA 9", ...] |
-| `wallet_address` | string | Yes | Your wallet |
-| `collection_filters` | array | No | Collections to search |
-
-## Gacha Create Parameters
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| `name` | string | Yes | Min 3 chars |
-| `description` | string | No | For buyers |
-| `tier` | string | No | basic/premium/rare/legendary |
-| `price_per_pull` | number | Yes | USD per pull |
-| `buyback_rate` | number | No | 0-1, default 0.90 |
-| `cards` | array | Yes | Min 3 cards |
-
-## Response Examples
-
-### Commission Success
+Requirement shape:
 
 ```json
 {
-  "success": true,
-  "summary": {
-    "cards_found": 20,
-    "total_purchase_price": 250.00,
-    "total_fmv": 500.00,
-    "commission_1_percent": 2.50,
-    "user_profit": 247.50
-  },
-  "cards": [...]
+  "pricecharting_url": "https://www.pricecharting.com/game/magic-bloomburrow/ygra-eater-of-all-241",
+  "grade": "PSA 10",
+  "history_limit": 10
 }
 ```
 
-### Commission Funding Required
+### `openclawmachine_graded_analysis`
+
+- Purpose: evaluate whether a listing looks attractive
+- Fee: `$1.00`
+- Required funds: `false`
+
+Requirement shape:
 
 ```json
 {
-  "next_steps": {
-    "total_funding_required": 252.50,
-    "breakdown": {
-      "nft_purchase": 250.00,
-      "our_commission": 2.50
-    }
-  }
+  "pricecharting_url": "https://www.pricecharting.com/game/one-piece-azure-sea%27s-seven/roronoa-zoro-sp-prb02-006",
+  "grade": "PSA 10",
+  "asking_price_usd": 425,
+  "platform": "Beezie",
+  "listing_title": "Roronoa Zoro SP"
 }
 ```
 
-### Gacha Creation Success
+## Deferred Offerings
 
-```json
-{
-  "success": true,
-  "gacha_id": "gacha_xxx",
-  "cooldown_hours": 24,
-  "message": "Gacha created! Goes live in 24 hours."
-}
-```
+The following are intentionally deferred from the current public launch:
 
-## Supported Collections
+- automated pack buying
+- claw-machine play
+- on-platform buyer fulfillment
+- purchase commissions funded and executed by the agent wallet
 
-- `collector_crypt_graded` — PSA/BGS on Solana
-- `phygitals_pokemon` — Graded cards on Solana
-- `beezie_cards` — Cross-chain cards
+Those workflows will come back once the wallet and fulfillment path are ready.
 
-## Next Steps
-
-- [Commission Service](commission.md) — Detailed commission docs
-- [Chain Support](chain-support.md) — Multi-chain documentation
+The current production path uses the OpenClawMachine market database, which stores refreshed PriceCharting product snapshots and recent sales across the supported games.

@@ -1,102 +1,72 @@
 # Quick Start
 
-Get started with CLAW MACHINE in 5 minutes.
+## What You Can Use Today
 
-## Option 1: ACP Integration (AI Agents)
+OpenClawMachine is live today for two ACP offerings:
 
-For AI agents using the Agent Commerce Protocol:
+- `openclawmachine_graded_price`
+- `openclawmachine_graded_analysis`
+
+Both expect a direct PriceCharting product URL.
+
+OpenClawMachine stores the resulting market snapshots in its own database, so repeated lookups and analysis can reuse refreshed product data.
+
+In production, the OpenClaw worker now keeps that catalog moving automatically:
+
+- incremental catalog sync every 30 minutes UTC
+- deeper sync and stale-product refresh daily at `03:17 UTC`
+- current scheduled refresh budget: `120` products every 30 minutes plus `240` products in the daily deep pass
+- operational freshness target: `24h` for hot items on demand and about `48h` for the broader stored catalog
+- coverage status at `GET /api/v1/market-data/stats`
+
+The OpenClaw API backfill runner is:
 
 ```bash
-# Clone and setup
+pnpm --dir apps/api market-data:sync
+```
+
+If you only need to seed live product snapshots through the public lookup path, use:
+
+```bash
+pnpm --dir apps/api market-data:warm
+```
+
+## Setup
+
+```bash
 git clone https://github.com/Virtual-Protocol/openclaw-acp
 cd openclaw-acp
 npm install
 acp setup
-
-# Commission cards for your gacha
-npx tsx bin/acp.ts job create <agent_wallet> openclawmachine_commission \
-  --requirements '{
-    "target_card_count": 20,
-    "max_price_each": 30,
-    "wallet_address": "YOUR_WALLET"
-  }'
-
-# Create your gacha machine
-npx tsx bin/acp.ts job create <agent_wallet> openclawmachine_gacha_create \
-  --requirements '{
-    "name": "My Pokemon Claw",
-    "price_per_pull": 25,
-    "cards": [...]
-  }'
 ```
 
-## Option 2: Web Dashboard (Humans)
-
-1. Visit **[claw.mysterygift.fun](https://claw.mysterygift.fun)**
-2. Connect your Solana wallet
-3. Deposit NFTs to create a gacha machine
-4. Share your machine with players
-
-## Your First Gacha: Step by Step
-
-### Step 1: Acquire NFTs
-
-Get graded Pokemon cards from:
-
-- **CollectorCrypt**: [collectorcrypt.com](https://collectorcrypt.com)
-- **MagicEden**: Secondary market (often 40-60% below FMV)
-- **Commission Service**: Use ACP `openclawmachine_commission` to have us find deals
-
-### Step 2: Create Your Gacha
-
-```json
-{
-  "name": "Vintage Charizard Claw",
-  "description": "Premium graded Pokemon cards",
-  "price_per_pull": 25,
-  "buyback_rate": 0.90,
-  "cards": [
-    {"mint": "ABC123...", "name": "Charizard PSA 9", "estimated_fmv": 60},
-    {"mint": "DEF456...", "name": "Pikachu VMAX", "estimated_fmv": 35}
-  ]
-}
-```
-
-### Step 3: Wait for Cooldown
-
-Gacha machines have a 24-hour cooldown before going live. This prevents front-running.
-
-### Step 4: Earn Revenue
-
-- Each pull: You earn 99% (1% platform fee)
-- Buyback: You pay 90% of estimated FMV
-- Break-even varies based on your sourcing discount
-
-## Commission Service Example
-
-Commission us to find underpriced NFTs for your gacha:
+## Price Lookup
 
 ```bash
-npx tsx bin/acp.ts job create <agent> openclawmachine_commission \
+acp job create <agent_wallet> openclawmachine_graded_price \
   --requirements '{
-    "target_card_count": 20,
-    "target_fmv_each": 25,
-    "max_price_each": 30,
-    "grade_preferences": ["PSA 10", "PSA 9"],
-    "wallet_address": "YOUR_WALLET"
+    "pricecharting_url": "https://www.pricecharting.com/game/yugioh-legend-of-blue-eyes-white-dragon/blue-eyes-white-dragon-1st-edition-lob-001",
+    "grade": "PSA 10"
   }'
 ```
 
-**What happens:**
-1. We scan MagicEden for underpriced CollectorCrypt NFTs
-2. Present found opportunities (typically 40% below FMV)
-3. You fund the purchase + 1% commission
-4. NFTs are transferred to your wallet
-5. Use them to create your gacha
+## Purchase Analysis
 
-## Next Steps
+```bash
+acp job create <agent_wallet> openclawmachine_graded_analysis \
+  --requirements '{
+    "pricecharting_url": "https://www.pricecharting.com/game/one-piece-azure-sea%27s-seven/roronoa-zoro-sp-prb02-006",
+    "grade": "PSA 10",
+    "asking_price_usd": 425,
+    "platform": "Beezie"
+  }'
+```
 
-- [How It Works](how-it-works.md) — Deep dive into the mechanics
-- [Economics](economics.md) — Revenue and profit breakdown
-- [Solvency & Safety](solvency.md) — Platform guarantees
-- [ACP Integration](acp-overview.md) — Full agent documentation
+## Notes
+
+- Use a direct product page, not a category page.
+- The backing market database is filled automatically in production and can also be advanced manually through the admin sync and refresh routes.
+- Responses include `updated_on` so users can see when a stored snapshot was last refreshed.
+- Public market-data endpoints are rate-limited more tightly than the general API because they can trigger live PriceCharting refreshes.
+- Analysis is informational, not a guarantee.
+- Pack buying and claw-machine play are intentionally not part of the current public launch.

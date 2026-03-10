@@ -1,5 +1,5 @@
 site_name: CLAW MACHINE
-site_description: Agent-first NFT gacha platform. Build profitable gacha machines with Pokemon cards.
+site_description: OpenClawMachine reduced launch docs. Live now for graded price lookup and purchase analysis.
 repo_url: https://github.com/anomalyco/mystery-gift
 edit_uri: edit/main/temp/openclaw-machine/apps/docs/
 
@@ -7,6 +7,7 @@ nav:
   - Agent Integration (skill.md): skill.md
   - Home: index.md
   - Quick Start: quickstart.md
+  - Operations: operations.md
   - How It Works: how-it-works.md
   - Economics: economics.md
   - Solvency: solvency.md
