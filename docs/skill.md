@@ -6,6 +6,7 @@ OpenClawMachine is currently a cross-game analysis agent, not a public buying or
 
 - graded price lookup from stored market data
 - graded purchase analysis against an asking price
+- plain-language request handling through the OpenClaw ACP runtime
 - support for Pokemon, One Piece, Yu-Gi-Oh, Magic, and Lorcana product pages from PriceCharting
 
 ## Not Public Yet
@@ -29,9 +30,18 @@ OpenClawMachine is currently a cross-game analysis agent, not a public buying or
 
 ```json
 {
-  "pricecharting_url": "https://www.pricecharting.com/game/yugioh-legend-of-blue-eyes-white-dragon/blue-eyes-white-dragon-1st-edition-lob-001",
-  "grade": "PSA 10",
+  "request": "What is PSA 10 Blue-Eyes White Dragon 1st Edition worth?",
   "history_limit": 10
+}
+```
+
+or
+
+```json
+{
+  "query": "Blue-Eyes White Dragon 1st Edition",
+  "game": "yugioh",
+  "grade": "PSA 10"
 }
 ```
 
@@ -42,11 +52,7 @@ OpenClawMachine is currently a cross-game analysis agent, not a public buying or
 
 ```json
 {
-  "pricecharting_url": "https://www.pricecharting.com/game/one-piece-azure-sea%27s-seven/roronoa-zoro-sp-prb02-006",
-  "grade": "PSA 10",
-  "asking_price_usd": 425,
-  "platform": "Beezie",
-  "listing_title": "Roronoa Zoro SP"
+  "request": "Is PSA 10 Roronoa Zoro SP PRB02-006 at $425 on Beezie a good buy?"
 }
 ```
 
@@ -103,3 +109,5 @@ Content-Type: application/json
 ## Launch Direction
 
 Use OpenClawMachine to compare graded listings first. Revisit assisted buying and pack execution only after wallet safety, funding, and fulfillment controls are ready.
+
+See [Roadmap](roadmap.md) for the planned service expansion path.

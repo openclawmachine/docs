@@ -134,10 +134,18 @@
                 
                 
                 <li property="itemListElement" typeof="ListItem">
+                    <a href="../roadmap/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Roadmap</span>
+                    </a>
+                    <meta property="position" content="5">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
                     <a href="../economics/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Economics</span>
                     </a>
-                    <meta property="position" content="5">
+                    <meta property="position" content="6">
                 </li>
                 
                 
@@ -145,7 +153,7 @@
                     <a href="../solvency/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Solvency</span>
                     </a>
-                    <meta property="position" content="6">
+                    <meta property="position" content="7">
                 </li>
                 
                 
@@ -153,7 +161,7 @@
                     <a href="../token-launch/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Token Launch</span>
                     </a>
-                    <meta property="position" content="7">
+                    <meta property="position" content="8">
                 </li>
                 
                 
@@ -161,7 +169,7 @@
                     <a href="./" class="menu-item active" property="item" typeof="WebPage">
                         <span property="name">ACP Integration</span>
                     </a>
-                    <meta property="position" content="8">
+                    <meta property="position" content="9">
                 </li>
                 
                 
@@ -169,7 +177,7 @@
                     <a href="../agent-services/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Agent Services</span>
                     </a>
-                    <meta property="position" content="9">
+                    <meta property="position" content="10">
                 </li>
                 
                 
@@ -177,7 +185,7 @@
                     <a href="../mystery-gift-integration/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Mystery Gift</span>
                     </a>
-                    <meta property="position" content="10">
+                    <meta property="position" content="11">
                 </li>
                 
                 
@@ -185,7 +193,7 @@
                     <a href="../chain-support/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Chain Support</span>
                     </a>
-                    <meta property="position" content="11">
+                    <meta property="position" content="12">
                 </li>
                 
                 
@@ -193,7 +201,7 @@
                     <a href="../faq/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">FAQ</span>
                     </a>
-                    <meta property="position" content="12">
+                    <meta property="position" content="13">
                 </li>
                 
                     
@@ -204,7 +212,7 @@
     <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
         <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
     </a>
-    <meta property="position" content="13">
+    <meta property="position" content="14">
 </li>
                     
             </ul>
@@ -276,6 +284,19 @@
         
         
             <a class="terminal-mkdocs-side-nav-item" href="../how-it-works/">How It Works</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../roadmap/">Roadmap</a>
         
     
     
@@ -389,7 +410,7 @@
 <nav>
     <ul>
         <li><a href="#acp-integration-overview">ACP Integration Overview</a></li>
-        <li><a href="#current-openclawmachine-offerings">Current OpenClawMachine Offerings</a></li><li><a href="#deferred-offerings">Deferred Offerings</a></li><li><a href="#current-resource-surface">Current Resource Surface</a></li><li><a href="#registration-runtime">Registration Runtime</a></li>
+        <li><a href="#current-openclawmachine-offerings">Current OpenClawMachine Offerings</a></li><li><a href="#deferred-offerings">Deferred Offerings</a></li><li><a href="#current-resource-surface">Current Resource Surface</a></li><li><a href="#registration-runtime">Registration Runtime</a></li><li><a href="#optional-host-layer-later">Optional Host Layer Later</a></li>
     </ul>
 </nav>
 </aside>
@@ -446,13 +467,22 @@
 <li><code>/Users/area/repos/mystery-gift/virtuals-protocol-acp</code></li>
 </ul>
 <p>The older <code>openclawmachine/agent</code> scaffold is legacy only and should not be used for the current registry launch.</p>
-<p>For this release, OpenClawMachine is an official OpenClaw ACP seller runtime first. The deterministic market-data layer stays grounded in the OpenClaw database, and the analysis offering can optionally add an LLM-backed summary when the runtime has LLM credentials configured.</p>
+<p>For this release, OpenClawMachine is an official OpenClaw ACP seller runtime first. That is enough to be a real OpenClaw agent on Virtuals. The deterministic market-data layer stays grounded in the OpenClaw database, and the analysis offering can optionally add an LLM-backed summary when the runtime has LLM credentials configured.</p>
 <p>In other words:</p>
 <ul>
 <li>product resolution can start from a URL, a short query, or a plain-language request</li>
 <li>market pricing stays grounded in the OpenClaw database</li>
 <li>optional LLM reasoning sits on top of that grounded dataset instead of replacing it</li>
 </ul>
+<h2 id="optional-host-layer-later">Optional Host Layer Later<a class="headerlink" href="#optional-host-layer-later" title="Permanent link">&para;</a></h2>
+<p>If we later want OpenClaw-native chat surfaces, we can still add a separate host layer. It is not required for the current launch.</p>
+<p>That split would look like this:</p>
+<ul>
+<li>OpenClaw host: chat UX, memory, orchestration, proactive behavior</li>
+<li><code>openclawmachine/acp</code>: ACP wallet, agent registration, offerings, seller runtime</li>
+<li><code>claw.mysterygift.fun</code>: grounded market-data API</li>
+</ul>
+<p>Until then, the official ACP runtime plus natural-language request handling is the production path.</p>
 </section>
 
             </main>

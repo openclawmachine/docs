@@ -19,7 +19,7 @@
 
     
  
-<title>Operations - CLAW MACHINE</title>
+<title>Roadmap - CLAW MACHINE</title>
 
 
 <link href="../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -118,7 +118,7 @@
                 
                 
                 <li property="itemListElement" typeof="ListItem">
-                    <a href="./" class="menu-item active" property="item" typeof="WebPage">
+                    <a href="../operations/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Operations</span>
                     </a>
                     <meta property="position" content="3">
@@ -134,7 +134,7 @@
                 
                 
                 <li property="itemListElement" typeof="ListItem">
-                    <a href="../roadmap/" class="menu-item " property="item" typeof="WebPage">
+                    <a href="./" class="menu-item active" property="item" typeof="WebPage">
                         <span property="name">Roadmap</span>
                     </a>
                     <meta property="position" content="5">
@@ -269,7 +269,9 @@
     
     
         
-        <span class="terminal-mkdocs-side-nav-item--active">Operations</span>
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../operations/">Operations</a>
+        
     
     
     
@@ -293,9 +295,7 @@
     
     
         
-        
-            <a class="terminal-mkdocs-side-nav-item" href="../roadmap/">Roadmap</a>
-        
+        <span class="terminal-mkdocs-side-nav-item--active">Roadmap</span>
     
     
     
@@ -409,95 +409,51 @@
 </nav><hr>
 <nav>
     <ul>
-        <li><a href="#operations">Operations</a></li>
-        <li><a href="#production-storage">Production Storage</a></li><li><a href="#automated-scraping">Automated Scraping</a></li><li><a href="#failure-recovery">Failure Recovery</a></li><li><a href="#rate-limits">Rate Limits</a></li><li><a href="#backups">Backups</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#live-now">Live Now</a></li><li><a href="#next">Next</a></li><li><a href="#later">Later</a></li><li><a href="#much-later">Much Later</a></li>
     </ul>
 </nav>
 </aside>
             <main id="terminal-mkdocs-main-content">
 <section id="mkdocs-terminal-content">
-    <h1 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h1>
-<h2 id="production-storage">Production Storage<a class="headerlink" href="#production-storage" title="Permanent link">&para;</a></h2>
+    <h1 id="roadmap">Roadmap<a class="headerlink" href="#roadmap" title="Permanent link">&para;</a></h1>
+<p>OpenClawMachine is intentionally launching narrow first.</p>
+<h2 id="live-now">Live Now<a class="headerlink" href="#live-now" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Market catalog and stored PriceCharting snapshots live in Cloudflare D1</li>
-<li>Production database name: <code>openclaw-machine-production</code></li>
-<li>Public API worker: <code>openclaw-machine-api</code></li>
-<li>Coverage status endpoint: <code>GET /api/v1/market-data/stats</code></li>
-<li>Miss is a separate Phala app and keeps its own app-state database, but graded Pokemon market data is intended to flow through this OpenClawMachine market-data service rather than a second scraper</li>
-<li>OpenClawMachine D1 is the canonical graded-market cache for both agents</li>
+<li><code>openclawmachine_graded_price</code></li>
+<li>cross-game graded price lookup</li>
+<li>URL, query, or plain-language request input</li>
+<li><code>openclawmachine_graded_analysis</code></li>
+<li>listing analysis against stored comps and recent sales</li>
+<li>optional LLM summary layered on top of the grounded dataset</li>
+<li>supported games:</li>
+<li>Pokemon</li>
+<li>One Piece</li>
+<li>Yu-Gi-Oh</li>
+<li>Magic</li>
+<li>Lorcana</li>
 </ul>
-<h2 id="automated-scraping">Automated Scraping<a class="headerlink" href="#automated-scraping" title="Permanent link">&para;</a></h2>
-<p>OpenClawMachine now runs two production cron jobs on Cloudflare Workers:</p>
+<h2 id="next">Next<a class="headerlink" href="#next" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>*/30 * * * *</code></li>
-<li>incremental catalog sync</li>
-<li>prioritizes unseen sets first, then the stalest known sets</li>
-<li>walks additional set pages with PriceCharting cursor pagination up to the configured per-set budget</li>
-<li>refreshes up to <code>120</code> of the oldest pending or stale product snapshots</li>
-<li><code>17 3 * * *</code></li>
-<li>deeper daily sync</li>
-<li>uses the same cursor-aware set crawling, but with a larger per-set budget</li>
-<li>expands more sets per game and refreshes up to <code>240</code> stale product snapshots</li>
+<li>stronger natural-language extraction for ambiguous requests</li>
+<li>better comparison output when multiple product matches are possible</li>
+<li>richer analysis explanations with clearer risks, upside, and confidence</li>
+<li>continued catalog expansion and freshness improvements across all supported games</li>
 </ul>
-<p>Freshness policy:</p>
+<h2 id="later">Later<a class="headerlink" href="#later" title="Permanent link">&para;</a></h2>
 <ul>
-<li>user-facing lookups can force a live refresh when cached data is missing or older than <code>24h</code></li>
-<li>scheduled crawling is tuned for roughly <code>48h</code> full-catalog freshness at current catalog size</li>
-<li>responses expose <code>updated_on</code> so users can evaluate the exact age of the snapshot they received</li>
+<li>assisted quote flows for third-party listings and sealed products</li>
+<li>human-in-the-loop purchase support</li>
+<li>better venue-aware analysis for Beezie, eBay, Collector Crypt, and Magic Eden</li>
 </ul>
-<p>These jobs update the same D1 catalog used by:</p>
+<h2 id="much-later">Much Later<a class="headerlink" href="#much-later" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>GET /api/v1/market-data/products</code></li>
-<li><code>GET /api/v1/market-data/lookup</code></li>
-<li><code>POST /api/v1/market-data/analyze</code></li>
+<li>pack buying</li>
+<li>claw-machine play</li>
+<li>agent-funded commissions</li>
+<li>fulfillment from agent-managed inventory or vault stock</li>
 </ul>
-<p>User-facing freshness fields:</p>
-<ul>
-<li><code>updated_on</code> is returned on product rows, lookup results, analysis results, and snapshots</li>
-<li><code>last_scraped_at</code> remains available on product records and storage metadata</li>
-</ul>
-<h2 id="failure-recovery">Failure Recovery<a class="headerlink" href="#failure-recovery" title="Permanent link">&para;</a></h2>
-<ul>
-<li>catalog sync now preserves existing scrape state instead of resetting already-completed products back to <code>pending</code></li>
-<li>normal refresh attempts skip <code>hard_failed</code> products and respect <code>next_retry_at</code> for soft-failed products</li>
-<li>soft failures use exponential backoff starting at <code>15m</code> and capping at <code>12h</code></li>
-<li>hard failures are reserved for structural problems such as invalid product URLs, unsupported product pages, or clear <code>404</code> / <code>410</code> responses</li>
-<li>responses and product records now expose:</li>
-<li><code>failure_class</code></li>
-<li><code>failure_count</code></li>
-<li><code>last_failure_at</code></li>
-<li><code>next_retry_at</code></li>
-</ul>
-<p>Practical meaning:</p>
-<ul>
-<li><code>soft</code> means the product should retry automatically later</li>
-<li><code>hard</code> means the last failure looked structurally invalid and will stay out of the normal retry pool until a forced refresh or source fix</li>
-</ul>
-<h2 id="rate-limits">Rate Limits<a class="headerlink" href="#rate-limits" title="Permanent link">&para;</a></h2>
-<p>Public market-data routes are intentionally stricter than the general API:</p>
-<ul>
-<li><code>/api/v1/market-data/products</code>: <code>30</code> requests per minute per IP</li>
-<li><code>/api/v1/market-data/lookup</code>: <code>12</code> requests per minute per IP</li>
-<li><code>/api/v1/market-data/lookup?force_refresh=true</code>: <code>2</code> requests per minute per IP</li>
-<li><code>/api/v1/market-data/analyze</code>: <code>6</code> requests per minute per IP</li>
-</ul>
-<p>General anonymous API traffic is still capped separately at <code>60</code> requests per minute per IP.</p>
-<h2 id="backups">Backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h2>
-<p>Current protection layers:</p>
-<ul>
-<li>Cloudflare D1 Time Travel for rollback and short-retention recovery</li>
-<li>Cloudflare-managed infrastructure redundancy for the hosted database itself</li>
-<li>repo-level nightly backup automation that exports D1 and uploads dated artifacts into R2 together with the Phala-hosted SQLite backups for Miss and the Pokemon TCG API</li>
-</ul>
-<p>Reference implementation:</p>
-<ul>
-<li><code>scripts/backups/run-nightly-backup.mjs</code></li>
-<li><code>.github/workflows/nightly-backups.yml</code></li>
-</ul>
-<p>Remaining operator task:</p>
-<ul>
-<li>configure lifecycle retention on the R2 backup bucket</li>
-</ul>
+<p>Those later purchase and fulfillment flows are intentionally gated on wallet safety, custody controls, and reliable operational funding.</p>
 </section>
 
             </main>

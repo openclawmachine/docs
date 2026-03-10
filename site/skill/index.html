@@ -134,10 +134,18 @@
                 
                 
                 <li property="itemListElement" typeof="ListItem">
+                    <a href="../roadmap/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Roadmap</span>
+                    </a>
+                    <meta property="position" content="5">
+                </li>
+                
+                
+                <li property="itemListElement" typeof="ListItem">
                     <a href="../economics/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Economics</span>
                     </a>
-                    <meta property="position" content="5">
+                    <meta property="position" content="6">
                 </li>
                 
                 
@@ -145,7 +153,7 @@
                     <a href="../solvency/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Solvency</span>
                     </a>
-                    <meta property="position" content="6">
+                    <meta property="position" content="7">
                 </li>
                 
                 
@@ -153,7 +161,7 @@
                     <a href="../token-launch/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Token Launch</span>
                     </a>
-                    <meta property="position" content="7">
+                    <meta property="position" content="8">
                 </li>
                 
                 
@@ -161,7 +169,7 @@
                     <a href="../acp-overview/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">ACP Integration</span>
                     </a>
-                    <meta property="position" content="8">
+                    <meta property="position" content="9">
                 </li>
                 
                 
@@ -169,7 +177,7 @@
                     <a href="../agent-services/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Agent Services</span>
                     </a>
-                    <meta property="position" content="9">
+                    <meta property="position" content="10">
                 </li>
                 
                 
@@ -177,7 +185,7 @@
                     <a href="../mystery-gift-integration/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Mystery Gift</span>
                     </a>
-                    <meta property="position" content="10">
+                    <meta property="position" content="11">
                 </li>
                 
                 
@@ -185,7 +193,7 @@
                     <a href="../chain-support/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Chain Support</span>
                     </a>
-                    <meta property="position" content="11">
+                    <meta property="position" content="12">
                 </li>
                 
                 
@@ -193,7 +201,7 @@
                     <a href="../faq/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">FAQ</span>
                     </a>
-                    <meta property="position" content="12">
+                    <meta property="position" content="13">
                 </li>
                 
                     
@@ -204,7 +212,7 @@
     <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
         <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
     </a>
-    <meta property="position" content="13">
+    <meta property="position" content="14">
 </li>
                     
             </ul>
@@ -274,6 +282,19 @@
         
         
             <a class="terminal-mkdocs-side-nav-item" href="../how-it-works/">How It Works</a>
+        
+    
+    
+    
+       </li>
+        
+          <li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="terminal-mkdocs-side-nav-item" href="../roadmap/">Roadmap</a>
         
     
     
@@ -401,6 +422,7 @@
 <ul>
 <li>graded price lookup from stored market data</li>
 <li>graded purchase analysis against an asking price</li>
+<li>plain-language request handling through the OpenClaw ACP runtime</li>
 <li>support for Pokemon, One Piece, Yu-Gi-Oh, Magic, and Lorcana product pages from PriceCharting</li>
 </ul>
 <h2 id="not-public-yet">Not Public Yet<a class="headerlink" href="#not-public-yet" title="Permanent link">&para;</a></h2>
@@ -422,9 +444,15 @@
 <li>input:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;pricecharting_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.pricecharting.com/game/yugioh-legend-of-blue-eyes-white-dragon/blue-eyes-white-dragon-1st-edition-lob-001&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;grade&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSA 10&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;What is PSA 10 Blue-Eyes White Dragon 1st Edition worth?&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;history_limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>or</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Blue-Eyes White Dragon 1st Edition&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;game&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;yugioh&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;grade&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSA 10&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="openclawmachine_graded_analysis"><code>openclawmachine_graded_analysis</code><a class="headerlink" href="#openclawmachine_graded_analysis" title="Permanent link">&para;</a></h3>
@@ -433,11 +461,7 @@
 <li>input:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;pricecharting_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://www.pricecharting.com/game/one-piece-azure-sea%27s-seven/roronoa-zoro-sp-prb02-006&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;grade&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSA 10&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;asking_price_usd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">425</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Beezie&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;listing_title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roronoa Zoro SP&quot;</span>
+<span class="w">  </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Is PSA 10 Roronoa Zoro SP PRB02-006 at $425 on Beezie a good buy?&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="api-surface">API Surface<a class="headerlink" href="#api-surface" title="Permanent link">&para;</a></h2>
@@ -479,6 +503,7 @@
 </ul>
 <h2 id="launch-direction">Launch Direction<a class="headerlink" href="#launch-direction" title="Permanent link">&para;</a></h2>
 <p>Use OpenClawMachine to compare graded listings first. Revisit assisted buying and pack execution only after wallet safety, funding, and fulfillment controls are ready.</p>
+<p>See <a href="../roadmap/">Roadmap</a> for the planned service expansion path.</p>
 </section>
 
             </main>
