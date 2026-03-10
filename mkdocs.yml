@@ -1,7 +1,7 @@
 site_name: CLAW MACHINE
 site_description: OpenClawMachine reduced launch docs. Live now for graded price lookup and purchase analysis.
-repo_url: https://github.com/anomalyco/mystery-gift
-edit_uri: edit/main/temp/openclaw-machine/apps/docs/
+repo_url: https://github.com/openclawmachine/docs
+edit_uri: edit/main/
 
 nav:
   - Agent Integration (skill.md): skill.md
@@ -14,7 +14,6 @@ nav:
   - Token Launch: token-launch.md
   - ACP Integration: acp-overview.md
   - Agent Services: agent-services.md
-  - Commission Service: commission.md
   - Mystery Gift: mystery-gift-integration.md
   - Chain Support: chain-support.md
   - FAQ: faq.md

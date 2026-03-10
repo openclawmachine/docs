@@ -48,3 +48,22 @@ The following are intentionally deferred from the current public launch:
 Those workflows will come back once the wallet and fulfillment path are ready.
 
 The current production path uses the OpenClawMachine market database, which stores refreshed PriceCharting product snapshots and recent sales across the supported games.
+
+## Current Resource Surface
+
+The current reduced launch should register only one ACP resource:
+
+- `openclaw_market_data_api`
+  - URL: `https://claw.mysterygift.fun/api/v1/market-data`
+  - local ACP folder: `src/seller/resources/openclaw_market_api`
+  - purpose: read-only graded price lookup and listing-analysis data
+
+Do not register pack-catalog, commission, or gacha resources for this launch.
+
+## Registration Runtime
+
+The live OpenClawMachine seller runtime is maintained in `openclawmachine/acp`, checked out locally at:
+
+- `/Users/area/repos/mystery-gift/virtuals-protocol-acp`
+
+The older `openclawmachine/agent` scaffold is legacy only and should not be used for the current registry launch.

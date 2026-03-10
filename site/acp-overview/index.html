@@ -174,18 +174,10 @@
                 
                 
                 <li property="itemListElement" typeof="ListItem">
-                    <a href="../commission/" class="menu-item " property="item" typeof="WebPage">
-                        <span property="name">Commission Service</span>
-                    </a>
-                    <meta property="position" content="10">
-                </li>
-                
-                
-                <li property="itemListElement" typeof="ListItem">
                     <a href="../mystery-gift-integration/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Mystery Gift</span>
                     </a>
-                    <meta property="position" content="11">
+                    <meta property="position" content="10">
                 </li>
                 
                 
@@ -193,7 +185,7 @@
                     <a href="../chain-support/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">Chain Support</span>
                     </a>
-                    <meta property="position" content="12">
+                    <meta property="position" content="11">
                 </li>
                 
                 
@@ -201,7 +193,7 @@
                     <a href="../faq/" class="menu-item " property="item" typeof="WebPage">
                         <span property="name">FAQ</span>
                     </a>
-                    <meta property="position" content="13">
+                    <meta property="position" content="12">
                 </li>
                 
                     
@@ -212,7 +204,7 @@
     <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
         <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
     </a>
-    <meta property="position" content="14">
+    <meta property="position" content="13">
 </li>
                     
             </ul>
@@ -359,19 +351,6 @@
     
         
         
-            <a class="terminal-mkdocs-side-nav-item" href="../commission/">Commission Service</a>
-        
-    
-    
-    
-       </li>
-        
-          <li class="terminal-mkdocs-side-nav-li">
-    
-    
-    
-        
-        
             <a class="terminal-mkdocs-side-nav-item" href="../mystery-gift-integration/">Mystery Gift</a>
         
     
@@ -410,7 +389,7 @@
 <nav>
     <ul>
         <li><a href="#acp-integration-overview">ACP Integration Overview</a></li>
-        <li><a href="#current-openclawmachine-offerings">Current OpenClawMachine Offerings</a></li><li><a href="#deferred-offerings">Deferred Offerings</a></li>
+        <li><a href="#current-openclawmachine-offerings">Current OpenClawMachine Offerings</a></li><li><a href="#deferred-offerings">Deferred Offerings</a></li><li><a href="#current-resource-surface">Current Resource Surface</a></li><li><a href="#registration-runtime">Registration Runtime</a></li>
     </ul>
 </nav>
 </aside>
@@ -456,6 +435,21 @@
 </ul>
 <p>Those workflows will come back once the wallet and fulfillment path are ready.</p>
 <p>The current production path uses the OpenClawMachine market database, which stores refreshed PriceCharting product snapshots and recent sales across the supported games.</p>
+<h2 id="current-resource-surface">Current Resource Surface<a class="headerlink" href="#current-resource-surface" title="Permanent link">&para;</a></h2>
+<p>The current reduced launch should register only one ACP resource:</p>
+<ul>
+<li><code>openclaw_market_data_api</code></li>
+<li>URL: <code>https://claw.mysterygift.fun/api/v1/market-data</code></li>
+<li>local ACP folder: <code>src/seller/resources/openclaw_market_api</code></li>
+<li>purpose: read-only graded price lookup and listing-analysis data</li>
+</ul>
+<p>Do not register pack-catalog, commission, or gacha resources for this launch.</p>
+<h2 id="registration-runtime">Registration Runtime<a class="headerlink" href="#registration-runtime" title="Permanent link">&para;</a></h2>
+<p>The live OpenClawMachine seller runtime is maintained in <code>openclawmachine/acp</code>, checked out locally at:</p>
+<ul>
+<li><code>/Users/area/repos/mystery-gift/virtuals-protocol-acp</code></li>
+</ul>
+<p>The older <code>openclawmachine/agent</code> scaffold is legacy only and should not be used for the current registry launch.</p>
 </section>
 
             </main>
