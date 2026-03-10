@@ -12,7 +12,8 @@ Requirement shape:
 
 ```json
 {
-  "pricecharting_url": "https://www.pricecharting.com/game/magic-bloomburrow/ygra-eater-of-all-241",
+  "query": "Ygra Eater of All 241",
+  "game": "magic",
   "grade": "PSA 10",
   "history_limit": 10
 }
@@ -28,7 +29,8 @@ Requirement shape:
 
 ```json
 {
-  "pricecharting_url": "https://www.pricecharting.com/game/one-piece-azure-sea%27s-seven/roronoa-zoro-sp-prb02-006",
+  "query": "Roronoa Zoro SP PRB02-006",
+  "game": "onepiece",
   "grade": "PSA 10",
   "asking_price_usd": 425,
   "platform": "Beezie",
