@@ -34,7 +34,7 @@ pnpm --dir apps/api market-data:warm
 ## Setup
 
 ```bash
-git clone https://github.com/Virtual-Protocol/openclaw-acp
+git clone https://github.com/openclawmachine/acp
 cd openclaw-acp
 npm install
 acp setup
