@@ -69,3 +69,5 @@ The live OpenClawMachine seller runtime is maintained in `openclawmachine/acp`, 
 - `/Users/area/repos/mystery-gift/virtuals-protocol-acp`
 
 The older `openclawmachine/agent` scaffold is legacy only and should not be used for the current registry launch.
+
+For this release, OpenClawMachine is an official OpenClaw ACP seller runtime first. The deterministic market-data layer stays grounded in the OpenClaw database, and the analysis offering can optionally add an LLM-backed summary when the runtime has LLM credentials configured.
