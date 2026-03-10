@@ -405,9 +405,7 @@
 </ul>
 <p>Requirement shape:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ygra Eater of All 241&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;game&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;magic&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;grade&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSA 10&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;What is Ygra Eater of All 241 worth in PSA 10?&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;history_limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -419,12 +417,8 @@
 </ul>
 <p>Requirement shape:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;query&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roronoa Zoro SP PRB02-006&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;game&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;onepiece&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;grade&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSA 10&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;asking_price_usd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">425</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;platform&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Beezie&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;listing_title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Roronoa Zoro SP&quot;</span>
+<span class="w">  </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Is PSA 10 Roronoa Zoro SP PRB02-006 at $425 on Beezie a good buy?&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;listing_context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Seller says centered well and recently pulled.&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="deferred-offerings">Deferred Offerings<a class="headerlink" href="#deferred-offerings" title="Permanent link">&para;</a></h2>
@@ -453,6 +447,12 @@
 </ul>
 <p>The older <code>openclawmachine/agent</code> scaffold is legacy only and should not be used for the current registry launch.</p>
 <p>For this release, OpenClawMachine is an official OpenClaw ACP seller runtime first. The deterministic market-data layer stays grounded in the OpenClaw database, and the analysis offering can optionally add an LLM-backed summary when the runtime has LLM credentials configured.</p>
+<p>In other words:</p>
+<ul>
+<li>product resolution can start from a URL, a short query, or a plain-language request</li>
+<li>market pricing stays grounded in the OpenClaw database</li>
+<li>optional LLM reasoning sits on top of that grounded dataset instead of replacing it</li>
+</ul>
 </section>
 
             </main>

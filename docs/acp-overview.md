@@ -12,9 +12,7 @@ Requirement shape:
 
 ```json
 {
-  "query": "Ygra Eater of All 241",
-  "game": "magic",
-  "grade": "PSA 10",
+  "request": "What is Ygra Eater of All 241 worth in PSA 10?",
   "history_limit": 10
 }
 ```
@@ -29,12 +27,8 @@ Requirement shape:
 
 ```json
 {
-  "query": "Roronoa Zoro SP PRB02-006",
-  "game": "onepiece",
-  "grade": "PSA 10",
-  "asking_price_usd": 425,
-  "platform": "Beezie",
-  "listing_title": "Roronoa Zoro SP"
+  "request": "Is PSA 10 Roronoa Zoro SP PRB02-006 at $425 on Beezie a good buy?",
+  "listing_context": "Seller says centered well and recently pulled."
 }
 ```
 
@@ -71,3 +65,9 @@ The live OpenClawMachine seller runtime is maintained in `openclawmachine/acp`, 
 The older `openclawmachine/agent` scaffold is legacy only and should not be used for the current registry launch.
 
 For this release, OpenClawMachine is an official OpenClaw ACP seller runtime first. The deterministic market-data layer stays grounded in the OpenClaw database, and the analysis offering can optionally add an LLM-backed summary when the runtime has LLM credentials configured.
+
+In other words:
+
+- product resolution can start from a URL, a short query, or a plain-language request
+- market pricing stays grounded in the OpenClaw database
+- optional LLM reasoning sits on top of that grounded dataset instead of replacing it
