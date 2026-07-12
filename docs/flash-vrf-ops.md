@@ -106,8 +106,17 @@ forge script script/DeployFlashVRF.s.sol:DeployFlashVRF \
 - Publish attestation / CVM app id next to contract addresses  
 - Do not reintroduce vault deposits for public inventory  
 
+## Edge cases (ops)
+
+- **CVM down:** opens stuck until `FULFILL_TIMEOUT`; `refundStale` frees reservation (anyone).  
+- **Push callback fail:** random still stored; call `settle`.  
+- **Key rotate:** complete or refund pending requests first.  
+- **Pause:** buyers can still refund/refundStale; do not pause casually.  
+- **Env on rng.mysterygift.fun:** set `FLASH_VRF_COORDINATOR_BASE`, `_BASE_SEPOLIA`, `_RH`, `_RH_TESTNET` (and optional pack escrow addresses) so the landing Flash panel lights up.
+
 ## Related
 
 - [Randomness Architecture](randomness-architecture.md)
 - [Vault Lifecycle](vault-lifecycle.md)
 - Contracts README: `contracts/README.md`
+- Live UI: `https://rng.mysterygift.fun` (HTTP + Flash modes)

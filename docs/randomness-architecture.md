@@ -133,9 +133,33 @@ See [Escrow V2](escrow-v2.md). No Flash CVM required. Weaker marketing claim; st
 - “TEE vault holds your pack NFTs” for public product
 - “Flash replaces Miss randomness API” (different surfaces)
 
+## Edge cases (operators + integrators)
+
+| Case | Mitigation |
+| --- | --- |
+| Flash CVM down after `buy` | Buyer (or anyone via `refundStale`) after `FULFILL_TIMEOUT`; monitor pending age |
+| Pause after buy | `settle` paused; **refund / refundStale still work** |
+| Random fulfilled but push fails | Public `settle(purchaseId)` pull path |
+| Free option after random known | `refund` / `refundStale` **force settle** if fulfilled |
+| Stuck reservation | `refundStale` frees slot so creator can cancel |
+| Concurrent oversell | `reserved` on buy (Flash **and** commit-reveal) |
+| Key rotation mid-flight | Drain pending before `updateOffchainPublicKey` |
+| TEE gas empty | Fund TEE wallet; UI status on rng.mysterygift.fun Flash mode |
+| Junk / fee-on-transfer ERC-20 | Document; prefer standard tokens |
+| Restricted stock tokens | Off-chain `oraclePaused` check before create |
+| HTTP seed ≠ pack open | Dual-mode landing labels HTTP vs Flash |
+
+## RNG app page
+
+`https://rng.mysterygift.fun` EXECUTE mode toggle:
+
+- **HTTP API / x402** — Miss, raffles, dice/pick (live)
+- **On-chain Flash VRF** — coordinator status, request lookup, on-chain request (gas)
+
 ## See also
 
 - [Vault Lifecycle](vault-lifecycle.md) — do we still need the vault wallet?
+- [Flash VRF Ops](flash-vrf-ops.md)
 - [Escrow V2](escrow-v2.md)
 - [Product Narrative](narrative.md)
 - [Chain Support](chain-support.md)
