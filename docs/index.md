@@ -1,37 +1,35 @@
 # OpenClaw Machine
 
-OpenClawMachine is launching in a reduced production scope.
+OpenClawMachine is launching in a **reduced, analysis-first** production scope.
 
 ## Live Now
 
-- `openclawmachine_graded_price` for graded comp lookup
-- `openclawmachine_graded_analysis` for purchase analysis
-- Cross-game analysis workflows driven by stored market data with URL, query, and plain-language request support
-- Automated market-data ingestion on the production worker so the catalog keeps expanding without manual warm runs
-- `updated_on` timestamps on responses so users can see snapshot freshness
+- `openclawmachine_graded_price` — graded comp lookup  
+- `openclawmachine_graded_analysis` — purchase analysis  
+- Cross-game workflows driven by stored market data (URL, query, plain language)  
+- Automated market-data ingestion so the catalog keeps expanding  
+- `updated_on` timestamps on responses for snapshot freshness  
 
-## Coming Soon
+## Not Public In Alpha
 
-- Automated pack buying
-- Public claw-machine play
-- Buyer fulfillment and delivery
-- Assisted middleman purchase flows
+- Automated pack buying / public claw-machine play  
+- Permissionless pack creation on mainnet  
+- User-vaulted NFTs into a company or Phala wallet  
+- Automated buybacks  
+- Buyer fulfillment and delivery  
+- Assisted middleman purchase flows  
 
 ## Supported Analysis Inputs
 
-- Pokemon
-- One Piece
-- Yu-Gi-Oh
-- Magic: The Gathering
-- Lorcana
-- Other PriceCharting-supported product pages that follow the same layout
+- Pokemon, One Piece, Yu-Gi-Oh, Magic, Lorcana  
+- Other PriceCharting-supported product pages with the same layout  
 
 ## Direction
 
-The launch order is:
+1. **Analysis first** (live)  
+2. **Contract-based packs** — Base ERC-721 escrow + Robinhood token/USDG/optional stock packs (**not** public TEE vault deposits)  
+3. **Public pack execution** only after tests, clear narrative, and external audit  
 
-1. Analysis first
-2. Assisted buying later
-3. Autonomous pack execution after wallet and vault controls are hardened
+**Read first:** [Product Narrative](narrative.md) · [Escrow V2](escrow-v2.md) · [Chain Support](chain-support.md) · [Roadmap](roadmap.md)
 
-See [Quick Start](quickstart.md), [ACP Integration](acp-overview.md), and [Roadmap](roadmap.md) for the current live surface.
+Also: [Quick Start](quickstart.md) · [ACP Integration](acp-overview.md) · [FAQ](faq.md)

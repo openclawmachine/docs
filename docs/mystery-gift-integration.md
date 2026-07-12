@@ -24,4 +24,4 @@ The two agents now have separate but complementary launch scopes.
 
 ## Deferred Shared Direction
 
-Both agents will later support assisted and autonomous pack-buy flows, but that is not part of the public launch today.
+Both agents may later support assisted and autonomous pack-buy flows, but that is not part of the public launch today. Public user inventory should wait for audited on-chain escrow rather than Phala-vault custody.

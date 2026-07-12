@@ -37,6 +37,7 @@ These services are intentionally not part of the current launch:
 - marketplace buying
 - card pack buying
 - public claw-machine play
-- pack fulfillment from agent-managed stock
+- pack fulfillment from company-owned stock or audited escrow
 
 The short-term direction is to help users analyze deals before automating purchases.
+The alpha public surface should not ask users to vault NFTs with OpenClawMachine. Phala vault signing is a company hot-wallet control, not a non-custodial user escrow.

@@ -34,14 +34,17 @@ Requirement shape:
 
 ## Deferred Offerings
 
-The following are intentionally deferred from the current public launch:
+**Not registered** until Base/Robinhood pack contracts + indexer ship and narrative allows it:
 
+- pack create / pack open (signed-tx handoff; not TEE vault deposits)
 - automated pack buying
 - claw-machine play
+
+Do not register empty gacha/commission ACP stubs. See [Product Narrative](narrative.md).
 - on-platform buyer fulfillment
 - purchase commissions funded and executed by the agent wallet
 
-Those workflows will come back once the wallet and fulfillment path are ready.
+Those workflows will come back only after the escrow and fulfillment path is ready. The Phala vault is company-stock-only during alpha and should not hold user-vaulted NFTs.
 
 The current production path uses the OpenClawMachine market database, which stores refreshed PriceCharting product snapshots and recent sales across the supported games.
 

@@ -20,10 +20,11 @@ Settlement is **Solidity smart contracts** on:
 
 ### Base: NFT packs
 
-1. Creator `safeTransferFrom` NFTs into `PackEscrow721`.
+1. Creator `safeTransferFrom` NFTs into `PackEscrow721` (`createPack`).
 2. Contract stores pack state, remaining token IDs, price (USDC), fee bps.
-3. Buyer pays USDC; contract selects a uniform random remaining NFT and transfers it out.
-4. Creator claims USDC proceeds (minus fee). Randomness may use an authorized oracle/TEE signature, but **NFT custody must never depend on a service wallet**.
+3. Buyer **pays USDC and commits** entropy (`buy`).
+4. After a short block delay, buyer **reveals** (`open`); contract selects a **uniform** remaining NFT and transfers it out (commit-reveal — no operator RNG key).
+5. Creator claims USDC proceeds (minus fee). **NFT custody never depends on a service wallet.**
 
 ### Robinhood Chain: token + RWA packs
 

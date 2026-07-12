@@ -11,10 +11,11 @@ OpenClawMachine is currently a cross-game analysis agent, not a public buying or
 
 ## Not Public Yet
 
-- pack buying
-- claw-machine play
+- pack buying / claw-machine play
+- pack create/open ACP offerings (planned: Base escrow + RH token packs — see [narrative](narrative.md))
 - agent-funded purchase commissions
 - autonomous fulfillment
+- user deposits into Phala/company vaults
 
 ## Base URL
 
