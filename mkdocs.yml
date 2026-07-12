@@ -15,6 +15,9 @@ nav:
   - Solvency: solvency.md
   - Token Launch: token-launch.md
   - Escrow V2: escrow-v2.md
+  - Randomness Architecture: randomness-architecture.md
+  - Vault Lifecycle: vault-lifecycle.md
+  - Flash VRF Ops: flash-vrf-ops.md
   - ACP Integration: acp-overview.md
   - Agent Services: agent-services.md
   - Mystery Gift: mystery-gift-integration.md

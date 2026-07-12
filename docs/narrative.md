@@ -25,11 +25,13 @@ OpenClaw Machine is **analysis-first**:
 
 | Chain | Product |
 | --- | --- |
-| **Base (`eip155:8453`)** | `PackEscrow721` — creators escrow **ERC-721** slab NFTs they already hold (e.g. Beezie-class); buyers pay **USDC** and open packs |
-| **Robinhood Chain (`eip155:4663`)** | Platform token **$CLAWMACHINE**, **USDG** payment rails, optional **stock-token packs** (`PackEscrow20`) |
+| **Base (`eip155:8453`)** | **NFT packs** — Pokemon, One Piece, Beezie-class graded ERC-721 via `PackEscrow721Flash` (USDC) |
+| **Robinhood Chain (`eip155:4663`)** | Platform token **$CLAWMACHINE**; **equity / stock-token packs** + **AI agent & meme token packs** (e.g. cashcat, hoodies, vexai) via `PackEscrow20Flash` (USDG) |
 | **Solana** | **Deferred** for pack settlement (CollectorCrypt / Phygitals may return later) |
 
 Physical cards stay with Beezie / Collector Crypt / graders. OpenClaw does **not** intake, insure, or ship physical inventory.
+
+**Custody:** pack assets live in the **escrow smart contract**, not a Phala TEE vault wallet. See [Vault Lifecycle](vault-lifecycle.md).
 
 ## How we differ from Beezie / Collector Crypt
 
@@ -43,16 +45,16 @@ Physical cards stay with Beezie / Collector Crypt / graders. OpenClaw does **not
 
 ## Randomness (honest wording)
 
-Pack contracts use **commit-reveal**:
+**Preferred (production packs):** [Phala Flash VRF](randomness-architecture.md) — on-chain request, TEE-signed fulfill, uniform pick over remaining reserved inventory. Trust root = Phala TEE + registered pubkey (not classical Chainlink ECVRF).
 
-1. Buyer **pays and commits** a hash of secret entropy  
-2. After a short block delay, buyer **reveals** and receives a **uniform** random remaining prize  
+**Fallback:** buyer **commit-reveal** (`PackEscrow721` / `PackEscrow20` without Flash).
 
-There is **no privileged `rngSigner`** in the current design. Do **not** say “Chainlink VRF” or “provably fair against all adversaries” unless that system is actually integrated. Do say: **uniform over remaining inventory; buyer-bound commit-reveal; not operator-picked**.
+Do **not** say “Chainlink VRF on Robinhood” (VRF not available there). Do **not** say “provably fair against all adversaries” for Flash without naming TEE trust. Do say: **uniform over remaining; escrowed inventory; Flash TEE-signed or commit-reveal**.
 
 ## Custody (honest wording)
 
 - **Public packs:** assets sit in the **escrow contract**, not a Phala hot wallet.  
+- **TEE vault wallet is not required** for public pack create/open — see [Vault Lifecycle](vault-lifecycle.md).  
 - **Legacy code** under `gacha.ts` / TEE vault is **company-stock / gated** and is **not** the public product path.  
 - **Never** market “deposit NFTs into our vault” for public creators.
 
@@ -72,6 +74,9 @@ It is **not** a claim on pack inventory and **not** a promise of pack revenue un
 
 ## See also
 
+- [Randomness Architecture](randomness-architecture.md)  
+- [Vault Lifecycle](vault-lifecycle.md)  
+- [Flash VRF Ops](flash-vrf-ops.md)  
 - [Escrow V2](escrow-v2.md)  
 - [Chain Support](chain-support.md)  
 - [Roadmap](roadmap.md)  

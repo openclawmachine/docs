@@ -11,20 +11,26 @@ Database-backed graded price lookup and graded purchase analysis across supporte
 ## Can users vault NFTs with OpenClawMachine?
 
 **No for public product.** Do not send NFTs to a Phala/company vault for OpenClaw packs.  
-Future packs use **on-chain escrow contracts** (Base for ERC-721s). Physical vaulting stays with issuers like Beezie or Collector Crypt.
+Packs use **on-chain escrow contracts** (Base ERC-721, Robinhood ERC-20). The **TEE vault wallet is not required** for public packs — see [Vault Lifecycle](vault-lifecycle.md). Physical vaulting stays with issuers like Beezie or Collector Crypt.
 
 ## Solana or Base or Robinhood?
 
 | Use | Chain |
 | --- | --- |
 | Analysis data | Off-chain (PriceCharting → D1) — chain-agnostic |
-| NFT packs (planned) | **Base** |
-| Platform token / USDG / stock packs (planned) | **Robinhood Chain** |
+| NFT packs (Pokemon, One Piece, Beezie-class) | **Base** |
+| Equity packs + AI/meme token packs + USDG | **Robinhood Chain** |
 | Solana packs | **Deferred** |
 
 ## Are packs “provably fair”?
 
-Planned contracts use **commit-reveal** with **uniform** selection over remaining inventory. That is not operator-picked. It is also not Chainlink VRF. See [narrative](narrative.md#randomness-honest-wording).
+**Preferred:** Phala **Flash VRF** (TEE-signed on-chain request/fulfill) with uniform selection over reserved remaining inventory. Trust root includes the Phala TEE — not classical Chainlink ECVRF.  
+**Fallback:** buyer **commit-reveal**.  
+Chainlink VRF is optional on Base only; **not on Robinhood**. See [Randomness Architecture](randomness-architecture.md).
+
+## Do we still need the TEE vault wallet app?
+
+**Not for public packs.** Escrow contracts hold inventory. Keep the vault CVM only while Mystery Gift livestream / company-stock paths still transfer from a hot wallet. Details: [Vault Lifecycle](vault-lifecycle.md).
 
 ## Do you compete with Beezie / Collector Crypt?
 

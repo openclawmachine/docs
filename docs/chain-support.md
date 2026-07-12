@@ -12,8 +12,8 @@ Payment for ACP analysis today: USDC on Solana/Base via facilitators; Robinhood 
 
 | Chain | CAIP-2 | Role |
 | --- | --- | --- |
-| **Base** | `eip155:8453` | Permissionless **ERC-721 pack escrow** (Beezie-style slab NFTs) |
-| **Robinhood Chain** | `eip155:4663` | `$CLAWMACHINE` token, USDG, optional stock-token packs |
+| **Base** | `eip155:8453` | **NFT packs** (Pokemon, One Piece, Beezie-class) via `PackEscrow721Flash` + Flash VRF |
+| **Robinhood Chain** | `eip155:4663` | `$CLAWMACHINE`, USDG, **equity + AI/meme ERC-20 packs** via `PackEscrow20Flash` |
 | Robinhood Testnet | `eip155:46630` | Contract deploys / dry runs |
 | Solana | — | **Deferred** for pack settlement |
 
@@ -41,4 +41,4 @@ Payment for ACP analysis today: USDC on Solana/Base via facilitators; Robinhood 
 - User deposits into Phala TEE vaults for public packs
 - Automated buybacks without atomic settlement
 
-Phala remains useful for **attested randomness** and **company-owned** inventory signing only — not public pack custody.
+Phala remains useful for **Flash VRF** (on-chain pack opens) and **HTTP RNG** (agents/raffles). The **TEE vault wallet is not used for public pack custody** — see [Vault Lifecycle](vault-lifecycle.md) and [Randomness Architecture](randomness-architecture.md).
