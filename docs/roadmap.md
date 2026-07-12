@@ -27,14 +27,17 @@ OpenClawMachine is intentionally launching narrow first.
 ## Later
 
 - assisted quote flows for third-party listings and sealed products
-- human-in-the-loop purchase support
 - better venue-aware analysis for Beezie, eBay, Collector Crypt, and Magic Eden
+- **Robinhood Chain:** `$CLAWMACHINE` token deploy + USDG fee rails
+- **Base:** `PackEscrow721` permissionless NFT packs (user-escrowed Beezie-class NFTs)
+- **Robinhood Chain:** optional stock-token packs (`PackEscrow20` + Chainlink EV)
 
 ## Much Later
 
-- pack buying
-- claw-machine play
+- pack buying / claw-machine play on mainnet (after audit)
 - agent-funded commissions
-- fulfillment from agent-managed inventory or vault stock
+- Solana pack path (CollectorCrypt / Phygitals) if product needs it
+- automated buybacks only if NFT-for-stablecoin settlement can be atomic
+- Base ↔ Robinhood bridges (not native RH messaging)
 
-Those later purchase and fulfillment flows are intentionally gated on wallet safety, custody controls, and reliable operational funding.
+Purchase and fulfillment are gated on **on-chain escrow** (Base + RH), not Phala user deposits. External audit required before mainnet user inventory.
